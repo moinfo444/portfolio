@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ملف الإنجاز المهني – معلم الفيزياء</title>
+<style>
+:root{
+  --bg:#f4f7fa;--surface:#ffffff;--ink:#0d2238;--muted:#4b6075;--line:#d5dee8;
+  --hero:#0b2540;--hero-ink:#f2f8fc;--accent:#0a7ea4;--accent-ink:#ffffff;--ph:#fff3c4;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0a1a2b;--surface:#11263b;--ink:#e6eef6;--muted:#9fb3c6;--line:#24405a;--hero:#071626;--accent:#4cc3ea;--accent-ink:#06223a;--ph:#4a4010}
+}
+:root[data-theme="dark"]{--bg:#0a1a2b;--surface:#11263b;--ink:#e6eef6;--muted:#9fb3c6;--line:#24405a;--hero:#071626;--accent:#4cc3ea;--accent-ink:#06223a;--ph:#4a4010}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Naskh Arabic","Segoe UI",Tahoma,"Geeza Pro",Arial,sans-serif;line-height:1.9;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{background:var(--hero);border-bottom:1px solid #1c3b5a}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+nav a{color:var(--hero-ink);text-decoration:none;padding:6px 14px;border-radius:999px;white-space:nowrap;font-size:15px}
+nav a:hover{background:#17395a}
+.hero{background:var(--hero);color:var(--hero-ink);position:relative;overflow:hidden;padding:64px 0 120px}
+.hero h1{font-size:clamp(34px,6vw,56px);line-height:1.3;margin:0 0 8px;font-weight:700}
+.hero .role{font-size:clamp(18px,2.6vw,24px);color:#9fd8ee;margin:0 0 6px}
+.hero .meta{color:#b9cde0;margin:0 0 28px;font-size:16px}
+.hero .quote{max-width:560px;border-inline-start:4px solid #4cc3ea;padding-inline-start:16px;font-size:19px;margin:0}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center;position:relative;z-index:1}
+.photo{width:200px;height:240px;border-radius:12px;border:2px dashed #4cc3ea;display:grid;place-items:center;text-align:center;color:#9fd8ee;font-size:14px;padding:12px}
+.scene{position:absolute;inset:0;width:100%;height:100%}
+.hero{background:radial-gradient(ellipse at 50% 40%,#12394f 0%,#081a29 70%)}
+.wave{position:absolute;inset-inline:0;bottom:0;height:90px;overflow:hidden;opacity:.55}
+.wave svg{position:absolute;bottom:0;left:0;width:1400px;height:90px;animation:slide 9s linear infinite}
+@keyframes slide{to{transform:translateX(-200px)}}
+@media (prefers-reduced-motion:reduce){.wave svg{animation:none}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:-44px;position:relative;z-index:2;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.stats div{padding:18px 12px;text-align:center;border-inline-start:1px solid var(--line)}
+.stats div:first-child{border-inline-start:0}
+.stats b{display:block;font-size:30px;line-height:1.3;color:var(--accent)}
+.stats span{color:var(--muted);font-size:15px}
+section{padding:56px 0 8px}
+h2{font-size:28px;margin:0 0 6px}
+.lead{color:var(--muted);margin:0 0 24px;max-width:640px}
+.about p{max-width:680px;margin:0 0 14px}
+.block{display:grid;grid-template-columns:240px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--line)}
+.block h3{margin:0 0 6px;font-size:22px}
+.block p{margin:0;color:var(--muted);font-size:15px;line-height:1.8}
+.items{list-style:none;margin:0;padding:0}
+.items li{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.items li:last-child{border-bottom:0}
+.items small{color:var(--muted);display:block;font-size:14px}
+.btn{flex:none;text-decoration:none;background:var(--accent);color:var(--accent-ink);padding:6px 16px;border-radius:6px;font-size:14px}
+.ph{background:var(--ph);border-radius:4px;padding:0 4px}
+.exp{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.exp div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px}
+.exp h4{margin:0 0 4px;font-size:17px}
+.exp p{margin:0;color:var(--muted);font-size:15px;line-height:1.8}
+footer{margin-top:56px;background:var(--hero);color:var(--hero-ink);padding:36px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer p{margin:0}
+.note{font-size:14px;color:var(--muted);margin-top:24px}
+.reg-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table.reg{width:100%;border-collapse:collapse;min-width:760px}
+.reg th,.reg td{border:1px solid var(--line);padding:4px 6px;text-align:center}
+.reg th{background:var(--hero);color:var(--hero-ink);font-size:15px;padding:8px}
+.reg input{width:100%;border:0;background:transparent;color:inherit;font:inherit;padding:8px 6px;text-align:center}
+.reg input:focus-visible{outline:2px solid var(--accent);background:var(--bg)}
+.reg .n{width:44px;color:var(--muted)}
+.sigimg{height:40px;max-width:110px;display:block;margin:0 auto 4px;background:#fff;border-radius:4px}
+.tools{display:flex;gap:10px;margin:14px 0;flex-wrap:wrap}
+.tools button,.sigbtn{font:inherit;cursor:pointer;border:0;border-radius:6px;padding:8px 16px;background:var(--accent);color:var(--accent-ink)}
+.sigbtn{padding:4px 14px;font-size:14px}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+dialog{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:18px;width:min(92vw,460px)}
+dialog canvas{width:100%;height:180px;border:2px dashed var(--accent);border-radius:6px;background:#fff;touch-action:none;display:block}
+@media print{nav,.tools,.hero,.stats,#about,#framework,section[aria-labelledby=t2],footer,.sigbtn,.admbar,.adm{display:none!important}}
+.admbar{display:none;background:var(--ph);border-bottom:1px solid var(--line);padding:10px 0;color:var(--ink)}
+body.isadmin .admbar{display:block}
+.admbar .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.admbar button{font:inherit;cursor:pointer;border:0;border-radius:6px;padding:6px 14px;background:var(--hero);color:var(--hero-ink)}
+.xbtn{flex:none;background:#b3261e;color:#fff;border:0;border-radius:50%;width:26px;height:26px;cursor:pointer;font:inherit;line-height:1;padding:0}
+.xbtn.wide{width:auto;border-radius:6px;padding:2px 10px;margin-top:8px;height:auto}
+.addbtn{font:inherit;cursor:pointer;border:1px dashed var(--accent);background:transparent;color:var(--ink);border-radius:6px;padding:6px 14px;margin:8px 0}
+li.adm{display:block;border-bottom:0}
+body.editing [contenteditable=true]{outline:1px dashed var(--accent);outline-offset:2px;min-height:1em}
+@media (max-width:720px){
+  .hero-grid{grid-template-columns:1fr}.photo{width:140px;height:170px}
+  .stats{grid-template-columns:repeat(2,1fr)}.stats div:nth-child(3){border-inline-start:0}.stats div:nth-child(n+3){border-top:1px solid var(--line)}
+  .block{grid-template-columns:1fr;gap:12px}.exp{grid-template-columns:1fr}
+}
+dialog input{width:100%;font:inherit;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+</style>
+</head>
+<body>
+<!-- دليل التعديل: النصوص المظللة بالأصفر هي بيانات تستبدلها ببياناتك. -->
+<nav aria-label="التنقل الرئيسي"><div class="wrap">
+  <a href="#about">عن المعلم</a><a href="#framework">الإطار المهني</a><a href="#performance">الأداء الوظيفي</a><a href="#production">الإنتاج التعليمي</a><a href="#growth">التطوير والتميّز</a><a href="#register">سجل الاطّلاع</a><a href="#contact">التواصل</a>
+</div></nav>
+<div class="admbar" id="admbar"><div class="wrap"><b>وضع الإدارة (لا يظهر للمشاهدين)</b><button id="aEdit">تعديل النص: تشغيل</button><button id="aSave">حفظ التغييرات</button><button id="aPh">إزالة التظليل الأصفر</button><button id="aOut">تسجيل الخروج</button><span id="aMsg"></span></div></div>
+
+<header class="hero">
+  <svg class="scene" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#4cc3ea" stroke-opacity=".13"/></pattern></defs>
+    <rect width="1000" height="420" fill="url(#g)"/>
+    <g fill="none" stroke="#4cc3ea" stroke-opacity=".4" stroke-width="1.5" transform="translate(520 200)">
+      <ellipse rx="170" ry="58"/><ellipse rx="170" ry="58" transform="rotate(60)"/><ellipse rx="170" ry="58" transform="rotate(120)"/>
+      <g fill="#9fd8ee" stroke="none" fill-opacity=".8"><circle cx="170" r="6"/><circle cx="-85" cy="-147" r="6"/><circle cx="-85" cy="147" r="6"/></g>
+      <circle r="14" fill="#4cc3ea" fill-opacity=".7" stroke="none"/>
+    </g>
+    <g fill="#9fd8ee" fill-opacity=".4" font-family="Georgia,serif" font-style="italic" font-size="24" direction="ltr">
+      <text x="60" y="70">E = mc²</text><text x="780" y="60">F = ma</text><text x="880" y="230">v = λf</text>
+      <text x="90" y="330">V = IR</text><text x="700" y="350">p = mv</text><text x="330" y="390">PV = nRT</text>
+    </g>
+  </svg>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="meta">ملف الإنجاز المهني · العام الدراسي <span class="ph">1447هـ</span></p>
+      <h1>الأستاذ/ <span class="ph">الاسم الثلاثي</span></h1>
+      <p class="role">معلم الفيزياء – المرحلة الثانوية</p>
+      <p class="meta"><span class="ph">اسم المدرسة</span> · إدارة تعليم <span class="ph">المنطقة</span></p>
+      <p class="quote">نتعلم الفيزياء لنفهم العالم، لا لنحفظ القوانين.</p>
+    </div>
+    
+  </div>
+  <div class="wave" aria-hidden="true"><svg viewBox="0 0 1400 90" preserveAspectRatio="none"><path d="M0 45 Q50 0 100 45 T200 45 T300 45 T400 45 T500 45 T600 45 T700 45 T800 45 T900 45 T1000 45 T1100 45 T1200 45 T1300 45 T1400 45" fill="none" stroke="#4cc3ea" stroke-width="3"/></svg></div>
+</header>
+
+<main class="wrap">
+  <div class="stats" aria-label="إحصائيات مختصرة">
+    <div><b class="ph">0</b><span>دورة تدريبية</span></div>
+    <div><b class="ph">0</b><span>درس نموذجي</span></div>
+    <div><b class="ph">0</b><span>تجربة عملية منفذة</span></div>
+    <div><b class="ph">0</b><span>طالب مكرَّم</span></div>
+  </div>
+
+  <section id="about" class="about">
+    <h2>نبذة تعريفية</h2>
+    <p class="lead">فلسفتي في التعليم باختصار.</p>
+    <p>معلم فيزياء في المرحلة الثانوية، أؤمن بأن الفيزياء علم يُفهم بالتجربة والملاحظة قبل المعادلات. أربط المفاهيم الفيزيائية بالحياة اليومية، وأنمّي مهارات التفكير العلمي وحل المسائل لدى طلابي.</p>
+    <p>أوظّف التقنية والمختبرات الافتراضية في تعزيز التعلم، بما يتوافق مع رؤية المملكة 2030 وأهداف سياسة التعليم.</p>
+  </section>
+
+  <section id="framework" aria-labelledby="t1">
+    <h2 id="t1">الأقسام</h2>
+    <p class="lead">كل قسم يضم الصفحات المرتبطة به. اربط كل زر بصفحته أو ملفه.</p>
+
+    <div class="block" id="about-teacher"><div><h3>عن المعلم</h3><p>الهوية المهنية والمؤهلات.</p></div>
+      <ul class="items">
+        <li><div>السيرة الذاتية<small>المؤهلات والخبرات والمهارات</small></div><a class="btn" href="#">عرض</a></li>
+        <li><div>الشهادات<small>المؤهل العلمي وشهادات الشكر</small></div><a class="btn" href="#">عرض</a></li>
+        <li><div>الرؤية والرسالة والقيم<small>ما أسعى إليه في ممارستي التعليمية</small></div><a class="btn" href="#">عرض</a></li>
+      </ul></div>
+
+    <div class="block"><div><h3>الإطار المهني</h3><p>المرجعيات التي تحكم عملي.</p></div>
+      <ul class="items">
+        <li><div>الأهداف العامة لسياسة التعليم في المملكة العربية السعودية</div><a class="btn" href="#">عرض</a></li>
+        <li><div>ميثاق أخلاقيات مهنة التعليم</div><a class="btn" href="#">عرض</a></li>
+        <li><div>سجل الاطّلاع<small>توقيع المشرفين إلكترونياً</small></div><a class="btn" href="#register">فتح السجل</a></li>
+      </ul></div>
+
+    <div class="block" id="performance"><div><h3>الأداء الوظيفي</h3><p>التخطيط والمتابعة اليومية.</p></div>
+      <ul class="items">
+        <li><div>جدول الحصص</div><a class="btn" href="#">عرض</a></li>
+        <li><div>توزيع المنهج<small>الخطة الزمنية لوحدات الفيزياء</small></div><a class="btn" href="#">عرض</a></li>
+        <li><div>سجل الحضور والمتابعة<small>الصفان الثاني والثالث الثانوي · نماذج دون أسماء الطلاب</small></div><a class="btn" href="#">عرض</a></li>
+      </ul></div>
+
+    <div class="block" id="production"><div><h3>الإنتاج التعليمي</h3><p>ما أقدّمه للطلاب داخل الفصل.</p></div>
+      <ul class="items">
+        <li><div>أوراق العمل<small>مسائل مصنّفة بحسب مستويات التفكير</small></div><a class="btn" href="#">عرض</a></li>
+        <li><div>الدروس النموذجية<small>الأهداف والأنشطة وأساليب التقويم</small></div><a class="btn" href="#">عرض</a></li>
+        <li><div>شواهد التجارب المنفذة<small>صور وفيديو لكل تجربة</small></div><a class="btn" href="#">عرض</a></li>
+      </ul></div>
+
+    <div class="block" id="growth"><div><h3>التطوير والتميّز</h3><p>النمو المهني وأثره في الطلاب.</p></div>
+      <ul class="items">
+        <li><div>التطوير المهني</div><a class="btn" href="#">عرض</a></li>
+        <li><div>الدورات التدريبية المنفذة<small>اسم الدورة · الجهة · التاريخ · الساعات</small></div><a class="btn" href="#">عرض</a></li>
+        <li><div>تكريم الطلاب<small>المتميزون في الفيزياء والمسابقات العلمية</small></div><a class="btn" href="#">عرض</a></li>
+      </ul></div>
+  </section>
+
+  <section id="register" aria-labelledby="t3">
+    <h2 id="t3">سجل الاطّلاع</h2>
+    <p class="lead">يكتب المشرف اسمه، ثم يضغط «توقيع» ويوقّع بإصبعه على الجوال أو الآيباد.</p>
+    <div class="reg-wrap"><table class="reg"><thead><tr><th>م</th><th>الاسم</th><th>الصفة / الجهة</th><th>التاريخ (هـ)</th><th>الملاحظات</th><th>التوقيع</th></tr></thead><tbody id="rows"></tbody></table></div>
+    <div class="tools"><button id="add">إضافة 5 صفوف</button><button class="ghost" id="print">طباعة / حفظ PDF</button></div>
+    <p class="note" id="mode" style="margin-top:0"></p>
+    <dialog id="dlg"><p id="who"></p><canvas id="cv"></canvas><div class="tools"><button id="ok">حفظ التوقيع</button><button class="ghost" id="clr">مسح</button><button class="ghost" id="cancel">إغلاق</button></div></dialog>
+  </section>
+
+  <section aria-labelledby="t2">
+    <h2 id="t2">من تجارب الفصل</h2>
+    <p class="lead">أمثلة مختصرة. استبدلها بتجاربك الفعلية.</p>
+    <div class="exp">
+      <div><h4 class="ph">اسم التجربة 1</h4><p>الوحدة: <span class="ph">الحركة</span>. ما الذي قاسه الطلاب وماذا استنتجوا؟</p></div>
+      <div><h4 class="ph">اسم التجربة 2</h4><p>الوحدة: <span class="ph">الكهرباء</span>. الأدوات والنتيجة في سطرين.</p></div>
+      <div><h4 class="ph">محاكاة PhET</h4><p>الوحدة: <span class="ph">الموجات</span>. كيف دعمت المحاكاة فهم المفهوم؟</p></div>
+    </div>
+    <p class="note">قبل النشر: أخفِ أسماء الطلاب في السجلات، واضبط صلاحية الملفات في Drive على الأشخاص المعنيين فقط.</p>
+  </section>
+</main>
+
+<footer id="contact"><div class="wrap">
+  <div><p><b>للتواصل</b></p><p><span class="ph">البريد الرسمي</span></p></div>
+  <div><p><span class="ph">اسم المدرسة</span></p><p>© <span class="ph">الاسم</span> · <span class="ph">1447هـ</span></p><p><a href="#" id="loginLink" style="font-size:13px;opacity:.65">دخول الإدارة</a></p></div>
+</div></footer>
+<dialog id="ldlg"><p><b>دخول الإدارة</b></p><p><input id="lu" placeholder="اسم المستخدم" autocomplete="username"></p><p><input id="lp" type="password" placeholder="كلمة السر" autocomplete="current-password"></p><p id="lmsg" class="note" style="margin:0 0 8px"></p><div class="tools"><button id="lok">دخول</button><button class="ghost" id="lcancel">إغلاق</button></div></dialog>
+<script>
+/* إعدادات Firebase: استبدل القيم من لوحة Firebase (Project settings). اسم المستخدم admin يعني البريد yazed2026yazed2026@gmail.com */
+window.FIREBASE_CONFIG={apiKey:'AIzaSyDq09CauDz8w26e19DZNTyb34lIJi79jBM',authDomain:'my-project-file1.firebaseapp.com',projectId:'my-project-file1',appId:'1:1085257647109:web:ddf625c66c6c84c843886c'};
+window.ADMIN_EMAIL='yazed2026yazed2026@gmail.com';
+</script>
+<script>
+(function(){
+var MIN=25,rows=MIN,data={},store=null,cur=null,dirty=false,drawing=false;
+var tb=document.getElementById('rows'),dlg=document.getElementById('dlg'),cv=document.getElementById('cv'),ctx=cv.getContext('2d'),who=document.getElementById('who'),modeEl=document.getElementById('mode');
+function id(i){return 'r'+String(i).padStart(3,'0')}
+function today(){try{var o={};new Intl.DateTimeFormat('en-u-ca-islamic-umalqura-nu-latn',{timeZone:'Asia/Riyadh',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).forEach(function(x){o[x.type]=x.value});return o.year+'/'+o.month+'/'+o.day+' هـ'}catch(e){return ''}}
+function save(i){var d=data[id(i)]||{};
+ if(store&&window.__save){window.__save(id(i),d)}
+ else{try{localStorage.setItem('reg',JSON.stringify(data))}catch(e){}}}
+function set(i,k,v){var key=id(i),d=Object.assign({},data[key]||{});d[k]=v;data[key]=d;save(i)}
+function row(i){var d=data[id(i)]||{},tr=document.createElement('tr');
+ var n=document.createElement('td');n.className='n';n.textContent=i;tr.appendChild(n);
+ [['name','الاسم','text'],['role','الصفة','text'],['date','التاريخ الهجري','text'],['note','ملاحظات','text']].forEach(function(f){
+  var td=document.createElement('td'),inp=document.createElement('input');inp.type=f[2];if(f[0]==='date')inp.placeholder='1448/05/14 هـ';inp.value=d[f[0]]||'';inp.setAttribute('aria-label',f[1]+' '+i);inp.readOnly=!!d.sig&&!document.body.classList.contains('isadmin');
+  inp.addEventListener('change',function(){set(i,f[0],inp.value)});td.appendChild(inp);tr.appendChild(td)});
+ var s=document.createElement('td');
+ if(typeof d.sig==='string'&&d.sig.indexOf('data:image/png;base64,')===0){var im=document.createElement('img');im.src=d.sig;im.className='sigimg';im.alt='التوقيع';s.appendChild(im)}
+ var b=document.createElement('button');b.className='sigbtn';b.textContent=d.sig?'إعادة التوقيع':'توقيع';b.addEventListener('click',function(){openSig(i)});if(!d.sig||document.body.classList.contains('isadmin'))s.appendChild(b);
+ if(document.body.classList.contains('isadmin')){var x=document.createElement('button');x.className='xbtn';x.textContent='×';x.title='مسح الصف';x.setAttribute('aria-label','مسح الصف '+i);x.addEventListener('click',function(){if(confirm('مسح بيانات الصف '+i+'؟')){data[id(i)]={};save(i);draw()}});s.appendChild(x)}
+ tr.appendChild(s);return tr}
+function draw(){tb.textContent='';for(var i=1;i<=rows;i++)tb.appendChild(row(i))}
+window.__regRedraw=draw;
+function fit(){var r=cv.getBoundingClientRect(),k=window.devicePixelRatio||1;cv.width=r.width*k;cv.height=r.height*k;ctx.setTransform(k,0,0,k,0,0);ctx.lineWidth=2.5;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#0d2238';dirty=false}
+function openSig(i){var d=data[id(i)]||{};if(!d.name){alert('اكتب الاسم أولاً ثم وقّع.');return}cur=i;who.textContent='التوقيع: '+d.name;dlg.showModal();fit()}
+function pt(e){var r=cv.getBoundingClientRect();return [e.clientX-r.left,e.clientY-r.top]}
+cv.addEventListener('pointerdown',function(e){drawing=true;dirty=true;cv.setPointerCapture(e.pointerId);var p=pt(e);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]+.1,p[1]);ctx.stroke()});
+cv.addEventListener('pointermove',function(e){if(!drawing)return;var p=pt(e);ctx.lineTo(p[0],p[1]);ctx.stroke()});
+['pointerup','pointercancel'].forEach(function(t){cv.addEventListener(t,function(){drawing=false})});
+document.getElementById('clr').onclick=fit;
+document.getElementById('cancel').onclick=function(){dlg.close()};
+document.getElementById('ok').onclick=function(){if(!dirty)return;
+ var o=document.createElement('canvas');o.width=360;o.height=150;var c=o.getContext('2d');c.fillStyle='#fff';c.fillRect(0,0,360,150);c.drawImage(cv,0,0,360,150);
+ var key=id(cur),d=Object.assign({},data[key]||{});d.sig=o.toDataURL('image/png');if(!d.date)d.date=today();data[key]=d;save(cur);dlg.close();draw()};
+document.getElementById('add').onclick=function(){rows+=5;draw()};
+document.getElementById('print').onclick=function(){window.print()};
+try{data=JSON.parse(localStorage.getItem('reg')||'{}')}catch(e){data={}}
+modeEl.textContent='يُحفظ هذا السجل على هذا الجهاز فقط.';
+draw();
+var B='https://www.gstatic.com/firebasejs/10.12.2/',C=window.FIREBASE_CONFIG;
+if(C&&C.apiKey&&C.apiKey.indexOf('PASTE')<0){Promise.all([import(B+'firebase-app.js'),import(B+'firebase-firestore.js'),import(B+'firebase-auth.js')]).then(function(m){
+ var app=m[0].initializeApp(C),fs=m[1],au=m[2],fdb=fs.getFirestore(app),auth=au.getAuth(app);
+ store=true;modeEl.textContent='السجل مشترك: تظهر التواقيع لكل من يفتح الرابط.';
+ window.__save=function(rid,d){var r=fs.doc(fdb,'log',rid);if(!Object.keys(d).length){fs.deleteDoc(r).catch(function(){});return}if(!window.__isAdmin&&!d.sig)return;fs.setDoc(r,d).catch(function(){alert('تعذّر الحفظ. ربما سبقك أحد إلى هذا الصف، اختر صفاً فارغاً.')})};
+ window.__saveZones=function(z){return fs.setDoc(fs.doc(fdb,'site','content'),{z:z})};
+ window.__login=function(u,p){return au.signInWithEmailAndPassword(auth,u.indexOf('@')>-1?u:u+'@admin.local',p)};
+ window.__logout=function(){return au.signOut(auth)};
+ var CH=600000;
+ window.__putFile=function(name,type,b64){var id='f'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),n=Math.ceil(b64.length/CH),b=fs.writeBatch(fdb);b.set(fs.doc(fdb,'files',id),{name:name,type:type,n:n});for(var k=0;k<n;k++)b.set(fs.doc(fdb,'files',id,'c',String(k)),{d:b64.slice(k*CH,(k+1)*CH)});return b.commit().then(function(){return id})};
+ window.__getFile=function(id){return fs.getDoc(fs.doc(fdb,'files',id)).then(function(m){if(!m.exists())throw 0;var t=m.data(),ps=[];for(var k=0;k<t.n;k++)ps.push(fs.getDoc(fs.doc(fdb,'files',id,'c',String(k))));return Promise.all(ps).then(function(a){var bin=atob(a.map(function(x){return x.data().d}).join('')),u=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);return new Blob([u],{type:t.type==='application/pdf'?'application/pdf':'image/jpeg'})})})};
+ window.__delFile=function(id){return fs.getDoc(fs.doc(fdb,'files',id)).then(function(m){if(!m.exists())return;var b=fs.writeBatch(fdb);for(var k=0;k<m.data().n;k++)b.delete(fs.doc(fdb,'files',id,'c',String(k)));b.delete(fs.doc(fdb,'files',id));return b.commit()}).catch(function(){})};
+ fs.onSnapshot(fs.collection(fdb,'log'),function(sn){sn.docChanges().forEach(function(c){var k=c.doc.id,n=parseInt(k.slice(1),10);if(c.type==='removed')delete data[k];else data[k]=c.doc.data();if(n>rows)rows=n});if(!tb.contains(document.activeElement)&&!dlg.open)draw()});
+ fs.getDoc(fs.doc(fdb,'site','content')).then(function(x){if(x.exists()&&window.__init)window.__init({zones:x.data().z})}).catch(function(){}).then(function(){
+  au.onAuthStateChanged(auth,function(u){var ok=!!u&&u.email===window.ADMIN_EMAIL;window.__isAdmin=ok;if(window.__setAdmin)window.__setAdmin(ok)})})
+})}
+})();
+</script>
+<script>
+(function(){
+var Z=['.hero-grid','.stats','#about','#framework','section[aria-labelledby=t2]','footer .wrap'];
+var TXT='h1,h2,h3,h4,p,small,.stats b,.stats span,.items li>div';
+var editing=true,db=null,msg=document.getElementById('aMsg');
+function zs(){return Z.map(function(s){return document.querySelector(s)})}
+function clean(root){root.querySelectorAll('script,iframe,object,embed,style,link').forEach(function(n){n.remove()});root.querySelectorAll('*').forEach(function(n){Array.from(n.attributes).forEach(function(a){var v=a.value.trim().toLowerCase();if(a.name.indexOf('on')===0||(/^(href|src|xlink:href)$/.test(a.name)&&v.indexOf('javascript:')===0))n.removeAttribute(a.name)})})}
+function apply(arr){zs().forEach(function(el,i){if(!el||typeof arr[i]!=='string')return;var t=document.createElement('template');t.innerHTML=arr[i];clean(t.content);el.textContent='';el.appendChild(t.content)})}
+function cc(el){var c=el.cloneNode(true);c.querySelectorAll('.adm').forEach(function(n){n.remove()});c.querySelectorAll('[contenteditable]').forEach(function(n){n.removeAttribute('contenteditable')});return c}
+function snapshot(){return zs().map(function(el){return cc(el).innerHTML})}
+function mk(txt,fn,cls){var b=document.createElement('button');b.type='button';b.className='adm '+cls;b.textContent=txt;b.addEventListener('click',fn);return b}
+function refresh(){decorate();setEd(editing)}
+function setEd(on){editing=on;document.body.classList.toggle('editing',on);document.querySelectorAll(TXT).forEach(function(el){if(el.closest('#register,#admbar,nav,dialog'))return;if(on)el.setAttribute('contenteditable','true');else el.removeAttribute('contenteditable')})}
+function readB64(f){return new Promise(function(ok,no){var r=new FileReader();r.onload=function(){ok(String(r.result).split(',')[1])};r.onerror=no;r.readAsDataURL(f)})}
+function shrink(f){return new Promise(function(ok,no){var u=URL.createObjectURL(f),im=new Image();im.onload=function(){var k=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);var q=.85,d;do{d=c.toDataURL('image/jpeg',q);q-=.1}while(d.length>2000000&&q>.3);ok(d.split(',')[1])};im.onerror=no;im.src=u})}
+function pickFile(ul,at){
+ if(!window.__putFile){alert('رفع الملفات غير متاح: لم تُضبط قاعدة البيانات.');return}
+ var inp=document.createElement('input');inp.type='file';inp.accept='.pdf,.jpg,.jpeg,application/pdf,image/jpeg';
+ inp.onchange=function(){var f=inp.files[0];if(!f)return;
+  var pdf=/pdf$/i.test(f.type)||/\.pdf$/i.test(f.name),jpg=/jpe?g$/i.test(f.type)||/\.jpe?g$/i.test(f.name);
+  if(!pdf&&!jpg){alert('الصيغ المسموحة: PDF أو JPEG فقط.');return}
+  if(pdf&&f.size>4000000){alert('حجم ملف PDF أكبر من 4 ميغابايت. اضغطه أو قسّمه ثم أعد المحاولة.');return}
+  msg.textContent='جاري الرفع…';
+  (pdf?readB64(f):shrink(f)).then(function(b){return window.__putFile(f.name,pdf?'application/pdf':'image/jpeg',b)}).then(function(id){
+   var last=ul.querySelector('li:not(.adm)');if(!last){msg.textContent='أضف عنصراً أولاً.';return}
+   var n=cc(last),a=n.querySelector('a.btn');n.querySelector('div').textContent=f.name;a.setAttribute('data-file',id);a.setAttribute('href','#');a.textContent='عرض';
+   ul.insertBefore(n,at);refresh();msg.textContent='تم رفع الملف. اضغط «حفظ التغييرات» لتثبيته في القائمة.'}).catch(function(){msg.textContent='تعذّر الرفع'})};
+ inp.click()}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-file]');if(!a)return;e.preventDefault();var id=a.getAttribute('data-file');if(!/^f[a-z0-9]{6,30}$/.test(id)||!window.__getFile)return;var w=window.open('','_blank');window.__getFile(id).then(function(b){var u=URL.createObjectURL(b);if(w)w.location.href=u;else location.href=u}).catch(function(){if(w)w.close();alert('تعذّر فتح الملف.')})});
+function decorate(){
+ document.querySelectorAll('.adm').forEach(function(n){n.remove()});
+ document.querySelectorAll('.items li').forEach(function(li){
+  li.appendChild(mk('🔗',function(){var a=li.querySelector('a.btn');if(!a)return;var v=prompt('رابط الزر:',a.getAttribute('href')||'');if(v!==null)a.setAttribute('href',v)},'xbtn'));
+  li.appendChild(mk('×',function(){if(confirm('حذف هذا العنصر؟')){var fa=li.querySelector('a[data-file]');if(fa&&window.__delFile)window.__delFile(fa.getAttribute('data-file'));li.remove();refresh()}},'xbtn'))});
+ document.querySelectorAll('.items').forEach(function(ul){var li=document.createElement('li');li.className='adm';li.appendChild(mk('＋ إضافة عنصر',function(){var last=ul.querySelector('li:not(.adm)');if(!last)return;var n=cc(last);n.querySelector('div').textContent='عنوان جديد';ul.insertBefore(n,li);refresh()},'addbtn'));li.appendChild(mk('📎 رفع ملف (PDF / صورة)',function(){pickFile(ul,li)},'addbtn'));ul.appendChild(li)});
+ document.querySelectorAll('.block').forEach(function(b){b.firstElementChild.appendChild(mk('× حذف القسم',function(){if(confirm('حذف القسم بالكامل؟')){b.remove();refresh()}},'xbtn wide'))});
+ var fw=document.getElementById('framework');
+ if(fw)fw.appendChild(mk('＋ إضافة قسم',function(){var bs=fw.querySelectorAll('.block');var last=bs[bs.length-1];if(!last)return;var n=cc(last);n.querySelector('h3').textContent='قسم جديد';n.querySelector('p').textContent='وصف القسم';var lis=n.querySelectorAll('.items li');for(var i=1;i<lis.length;i++)lis[i].remove();lis[0].querySelector('div').textContent='عنوان جديد';last.parentNode.insertBefore(n,last.nextSibling);refresh()},'addbtn'));
+ document.querySelectorAll('.stats>div,.exp>div').forEach(function(d){d.appendChild(mk('×',function(){if(confirm('حذف؟')){d.remove();refresh()}},'xbtn'))});
+ [['.stats','عنوان'],['.exp','عنوان التجربة']].forEach(function(p){var box=document.querySelector(p[0]);if(!box)return;var btn=mk('＋ إضافة',function(){var last=box.lastElementChild;while(last&&last.classList.contains('adm'))last=last.previousElementSibling;if(!last)return;var n=cc(last);var h=n.querySelector('b,h4');if(h)h.textContent=p[0]==='.stats'?'0':p[1];var s=n.querySelector('span,p');if(s)s.textContent=p[0]==='.stats'?'عنوان':'وصف مختصر';box.appendChild(n);refresh()},'addbtn');box.parentNode.insertBefore(btn,box.nextSibling)})
+}
+function admin(){
+ document.body.classList.add('isadmin');decorate();setEd(true);if(window.__regRedraw)window.__regRedraw();
+ var e=document.getElementById('aEdit');
+ e.onclick=function(){setEd(!editing);e.textContent='تعديل النص: '+(editing?'تشغيل':'إيقاف')};
+ document.getElementById('aOut').onclick=function(){window.__logout().then(function(){location.reload()})};
+ document.getElementById('aPh').onclick=function(){document.querySelectorAll('.ph').forEach(function(n){n.classList.remove('ph')})};
+ document.getElementById('aSave').onclick=function(){if(!window.__saveZones){msg.textContent='الحفظ غير متاح: لم تُضبط قاعدة البيانات.';return}
+  window.__saveZones(snapshot()).then(function(){msg.textContent='تم الحفظ'}).catch(function(){msg.textContent='تعذّر الحفظ'})}
+}
+window.__init=function(s){if(Array.isArray(s.zones))apply(s.zones)};
+window.__setAdmin=function(ok){if(ok&&!document.body.classList.contains('isadmin'))admin()};
+var ld=document.getElementById('ldlg'),lm=document.getElementById('lmsg');
+document.getElementById('loginLink').onclick=function(e){e.preventDefault();ld.showModal()};
+document.getElementById('lcancel').onclick=function(){ld.close()};
+document.getElementById('lok').onclick=function(){if(!window.__login){lm.textContent='لم تُضبط قاعدة البيانات بعد.';return}lm.textContent='...';window.__login(document.getElementById('lu').value.trim().toLowerCase(),document.getElementById('lp').value).then(function(){ld.close();document.getElementById('lp').value='';lm.textContent=''}).catch(function(){lm.textContent='اسم المستخدم أو كلمة السر غير صحيحة.'})};
+})();
+</script>
+</body>
+</html>
