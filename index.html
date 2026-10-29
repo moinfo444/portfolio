@@ -324,9 +324,9 @@ function admin(){
 window.__init=function(s){if(Array.isArray(s.zones))apply(s.zones)};
 window.__setAdmin=function(ok){if(ok&&!document.body.classList.contains('isadmin'))admin()};
 var ld=document.getElementById('ldlg'),lm=document.getElementById('lmsg');
-document.getElementById('loginLink').onclick=function(e){e.preventDefault();ld.showModal()};
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('#loginLink');if(!a)return;e.preventDefault();ld.showModal()});
 document.getElementById('lcancel').onclick=function(){ld.close()};
-document.getElementById('lok').onclick=function(){if(!window.__login){lm.textContent='لم تُضبط قاعدة البيانات بعد.';return}lm.textContent='...';window.__login(document.getElementById('lu').value.trim().toLowerCase(),document.getElementById('lp').value).then(function(){ld.close();document.getElementById('lp').value='';lm.textContent=''}).catch(function(){lm.textContent='اسم المستخدم أو كلمة السر غير صحيحة.'})};
+document.getElementById('lok').onclick=function(){if(!window.__login){lm.textContent='لم تُضبط قاعدة البيانات بعد.';return}lm.textContent='...';window.__login(document.getElementById('lu').value.trim().toLowerCase(),document.getElementById('lp').value).then(function(){ld.close();document.getElementById('lp').value='';lm.textContent=''}).catch(function(e){var c=(e&&e.code)||'';lm.textContent=(c==='auth/operation-not-allowed'?'لم يُفعَّل Email/Password في Firebase.':c==='auth/too-many-requests'?'محاولات كثيرة، انتظر قليلاً ثم أعد المحاولة.':c==='auth/network-request-failed'?'مشكلة في الاتصال بالإنترنت.':'البريد أو كلمة السر غير صحيحة، أو لم يُضف المستخدم.')+' ('+c+')'})};
 })();
 </script>
 </body>
