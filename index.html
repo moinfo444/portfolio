@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ملف الإنجاز المهني – معلم الفيزياء</title>
+<title>ملف الإنجاز المهني – معلم/ة الفيزياء</title>
 <style>
 :root{
   --bg:#f4f7fa;--surface:#ffffff;--ink:#0d2238;--muted:#4b6075;--line:#d5dee8;
@@ -93,118 +93,111 @@ body.editing [contenteditable=true]{outline:1px dashed var(--accent);outline-off
   .block{grid-template-columns:1fr;gap:12px}.exp{grid-template-columns:1fr}
 }
 dialog input{width:100%;font:inherit;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+
+[hidden]{display:none!important}
+nav a.on{background:#17395a;color:#fff}
+.hero{min-height:calc(100vh - 54px);display:flex;align-items:center;padding:48px 0;background:radial-gradient(ellipse at 70% 40%,#10405a 0%,#081a29 60%,#050f1a 100%)}
+.hero .scene{position:absolute;inset:0;width:100%;height:100%}
+.hero-grid{grid-template-columns:1.15fr .85fr;gap:24px;width:100%}
+.hero-text h1{background:linear-gradient(90deg,#fff,#9fd8ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-text h1 .ph{color:#0b2540}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.pill{border:1px solid #2b6a86;background:#0b2f45aa;color:#bfe6f5;padding:2px 14px;border-radius:999px;font-size:14px}
+.hero .intro{max-width:600px;color:#cfe3ef;font-size:16.5px;margin:18px 0 0}
+.atom{width:100%;max-width:440px;justify-self:center;filter:drop-shadow(0 0 22px #4cc3ea55)}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 48s linear infinite}
+.ring{transform-box:fill-box;transform-origin:center;animation:spin 90s linear infinite reverse}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 3.2s ease-in-out infinite}
+.w1{animation:slide 14s linear infinite}.w2{animation:slide 22s linear infinite reverse}.w3{animation:slide 30s linear infinite}
+.tw{animation:tw 4s ease-in-out infinite alternate}
+.fl{animation:flt 9s ease-in-out infinite alternate}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{transform:scale(1.25);opacity:.8}}
+@keyframes slide{to{transform:translateX(-200px)}}
+@keyframes tw{from{opacity:.15}to{opacity:1}}
+@keyframes flt{from{transform:translateY(-10px)}to{transform:translateY(12px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+.hero .ph,footer .ph{color:#0b2540!important}
+.inner{padding:28px 0 8px}
+.pagehead{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.pagehead h2{margin:0;font-size:30px}
+a.back{display:inline-block;text-decoration:none;background:var(--accent);color:var(--accent-ink);padding:5px 16px;border-radius:999px;font-size:15px}
+.foot-back{margin:24px 0 8px}
+.pc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.pc .stats{margin:0 0 18px;background:var(--bg)}
+.pc .lead{margin-bottom:8px}
+.pc h3.sub{margin:28px 0 4px;font-size:22px}
+@media (max-width:720px){.hero{min-height:auto;padding:36px 0 28px}.hero-grid{grid-template-columns:1fr}.atom{max-width:280px;order:-1}.pagehead h2{font-size:24px}}
 </style>
 </head>
 <body>
 <!-- دليل التعديل: النصوص المظللة بالأصفر هي بيانات تستبدلها ببياناتك. -->
-<nav aria-label="التنقل الرئيسي"><div class="wrap">
-  <a href="#about">عن المعلم</a><a href="#framework">الإطار المهني</a><a href="#performance">الأداء الوظيفي</a><a href="#production">الإنتاج التعليمي</a><a href="#growth">التطوير والتميّز</a><a href="#register">سجل الاطّلاع</a><a href="#contact">التواصل</a>
-</div></nav>
+<nav id="topnav" aria-label="التنقل الرئيسي"><div class="wrap"><a href="#home">الرئيسية</a><a href="#about">عن المعلم</a><a href="#framework">الإطار المهني</a><a href="#performance">الأداء الوظيفي</a><a href="#production">الإنتاج التعليمي</a><a href="#growth">التطوير والتميّز</a><a href="#register">سجل الاطّلاع</a></div></nav>
 <div class="admbar" id="admbar"><div class="wrap"><b>وضع الإدارة (لا يظهر للمشاهدين)</b><button id="aEdit">تعديل النص: تشغيل</button><button id="aSave">حفظ التغييرات</button><button id="aPh">إزالة التظليل الأصفر</button><button id="aOut">تسجيل الخروج</button><span id="aMsg"></span></div></div>
-
-<header class="hero">
-  <svg class="scene" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#4cc3ea" stroke-opacity=".13"/></pattern></defs>
-    <rect width="1000" height="420" fill="url(#g)"/>
-    <g fill="none" stroke="#4cc3ea" stroke-opacity=".4" stroke-width="1.5" transform="translate(520 200)">
-      <ellipse rx="170" ry="58"/><ellipse rx="170" ry="58" transform="rotate(60)"/><ellipse rx="170" ry="58" transform="rotate(120)"/>
-      <g fill="#9fd8ee" stroke="none" fill-opacity=".8"><circle cx="170" r="6"/><circle cx="-85" cy="-147" r="6"/><circle cx="-85" cy="147" r="6"/></g>
-      <circle r="14" fill="#4cc3ea" fill-opacity=".7" stroke="none"/>
-    </g>
-    <g fill="#9fd8ee" fill-opacity=".4" font-family="Georgia,serif" font-style="italic" font-size="24" direction="ltr">
-      <text x="60" y="70">E = mc²</text><text x="780" y="60">F = ma</text><text x="880" y="230">v = λf</text>
-      <text x="90" y="330">V = IR</text><text x="700" y="350">p = mv</text><text x="330" y="390">PV = nRT</text>
-    </g>
-  </svg>
-  <div class="wrap hero-grid">
-    <div>
-      <p class="meta">ملف الإنجاز المهني · العام الدراسي <span class="ph">1447هـ</span></p>
-      <h1>الأستاذ/ <span class="ph">الاسم الثلاثي</span></h1>
-      <p class="role">معلم الفيزياء – المرحلة الثانوية</p>
-      <p class="meta"><span class="ph">اسم المدرسة</span> · إدارة تعليم <span class="ph">المنطقة</span></p>
-      <p class="quote">نتعلم الفيزياء لنفهم العالم، لا لنحفظ القوانين.</p>
-    </div>
-    
-  </div>
-  <div class="wave" aria-hidden="true"><svg viewBox="0 0 1400 90" preserveAspectRatio="none"><path d="M0 45 Q50 0 100 45 T200 45 T300 45 T400 45 T500 45 T600 45 T700 45 T800 45 T900 45 T1000 45 T1100 45 T1200 45 T1300 45 T1400 45" fill="none" stroke="#4cc3ea" stroke-width="3"/></svg></div>
-</header>
-
+<header class="hero" id="home"><svg class="scene" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><pattern id="g" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#4cc3ea" stroke-opacity=".09"/></pattern>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient></defs>
+<rect width="1000" height="700" fill="url(#g)"/><g fill="#cfeefa"><circle class="tw" cx="341" cy="495" r="1.0" style="animation-duration:3.9s;animation-delay:-0.3s"/><circle class="tw" cx="850" cy="284" r="1.0" style="animation-duration:3.8s;animation-delay:-0.3s"/><circle class="tw" cx="529" cy="119" r="1.0" style="animation-duration:2.8s;animation-delay:-2.5s"/><circle class="tw" cx="256" cy="56" r="1.8" style="animation-duration:4.0s;animation-delay:-5.0s"/><circle class="tw" cx="136" cy="495" r="1.0" style="animation-duration:4.7s;animation-delay:-3.5s"/><circle class="tw" cx="73" cy="305" r="1.8" style="animation-duration:3.9s;animation-delay:-5.9s"/><circle class="tw" cx="57" cy="295" r="1.0" style="animation-duration:3.5s;animation-delay:-0.9s"/><circle class="tw" cx="130" cy="302" r="1.3" style="animation-duration:4.5s;animation-delay:-4.1s"/><circle class="tw" cx="115" cy="307" r="1.8" style="animation-duration:4.7s;animation-delay:-2.2s"/><circle class="tw" cx="570" cy="374" r="1.0" style="animation-duration:4.5s;animation-delay:-3.7s"/><circle class="tw" cx="518" cy="358" r="1.8" style="animation-duration:4.0s;animation-delay:-1.9s"/><circle class="tw" cx="609" cy="482" r="1.3" style="animation-duration:3.8s;animation-delay:-1.5s"/><circle class="tw" cx="194" cy="367" r="1.0" style="animation-duration:2.8s;animation-delay:-1.8s"/><circle class="tw" cx="516" cy="458" r="1.3" style="animation-duration:5.1s;animation-delay:-1.7s"/><circle class="tw" cx="84" cy="70" r="1.8" style="animation-duration:4.0s;animation-delay:-4.5s"/><circle class="tw" cx="165" cy="487" r="1.3" style="animation-duration:4.0s;animation-delay:-5.8s"/><circle class="tw" cx="89" cy="401" r="1.8" style="animation-duration:4.5s;animation-delay:-5.3s"/><circle class="tw" cx="331" cy="184" r="1.8" style="animation-duration:3.7s;animation-delay:-3.0s"/><circle class="tw" cx="826" cy="243" r="1.0" style="animation-duration:5.4s;animation-delay:-5.7s"/><circle class="tw" cx="495" cy="366" r="1.8" style="animation-duration:2.7s;animation-delay:-4.4s"/><circle class="tw" cx="327" cy="341" r="1.8" style="animation-duration:6.0s;animation-delay:-4.9s"/><circle class="tw" cx="301" cy="376" r="1.3" style="animation-duration:5.6s;animation-delay:-2.1s"/><circle class="tw" cx="973" cy="246" r="1.3" style="animation-duration:3.1s;animation-delay:-0.7s"/><circle class="tw" cx="70" cy="121" r="1.3" style="animation-duration:3.0s;animation-delay:-1.5s"/><circle class="tw" cx="410" cy="479" r="1.3" style="animation-duration:2.8s;animation-delay:-2.7s"/><circle class="tw" cx="572" cy="152" r="1.0" style="animation-duration:5.4s;animation-delay:-5.2s"/><circle class="tw" cx="295" cy="371" r="1.3" style="animation-duration:6.0s;animation-delay:-4.1s"/><circle class="tw" cx="399" cy="500" r="1.0" style="animation-duration:3.0s;animation-delay:-1.1s"/><circle class="tw" cx="247" cy="347" r="1.0" style="animation-duration:2.5s;animation-delay:-5.0s"/><circle class="tw" cx="196" cy="144" r="1.3" style="animation-duration:2.5s;animation-delay:-2.5s"/><circle class="tw" cx="388" cy="322" r="1.8" style="animation-duration:3.6s;animation-delay:-0.8s"/><circle class="tw" cx="889" cy="273" r="1.8" style="animation-duration:4.8s;animation-delay:-4.4s"/><circle class="tw" cx="477" cy="470" r="1.8" style="animation-duration:5.3s;animation-delay:-2.4s"/><circle class="tw" cx="418" cy="211" r="1.0" style="animation-duration:4.2s;animation-delay:-2.4s"/><circle class="tw" cx="205" cy="44" r="1.0" style="animation-duration:4.0s;animation-delay:-0.7s"/><circle class="tw" cx="625" cy="36" r="1.0" style="animation-duration:2.5s;animation-delay:-0.9s"/><circle class="tw" cx="113" cy="495" r="1.3" style="animation-duration:4.6s;animation-delay:-0.4s"/><circle class="tw" cx="222" cy="324" r="1.3" style="animation-duration:3.0s;animation-delay:-1.5s"/></g>
+<g fill="#9fd8ee" fill-opacity=".34" font-family="Georgia,serif" font-style="italic" font-size="26" direction="ltr"><text class="fl" x="70" y="90" style="animation-delay:-0s">E = mc²</text><text class="fl" x="820" y="70" style="animation-delay:-2s">F = ma</text><text class="fl" x="900" y="300" style="animation-delay:-4s">v = λf</text><text class="fl" x="60" y="330" style="animation-delay:-6s">V = IR</text><text class="fl" x="760" y="520" style="animation-delay:-8s">p = mv</text><text class="fl" x="90" y="470" style="animation-delay:-10s">F = G·m₁m₂/r²</text><text class="fl" x="560" y="60" style="animation-delay:-12s">ΔxΔp ≥ ħ/2</text></g>
+<g class="w1"><path d="M-200 600 Q-150 550 -100 600 T0 600 T100 600 T200 600 T300 600 T400 600 T500 600 T600 600 T700 600 T800 600 T900 600 T1000 600 T1100 600 T1200 600 T1300 600 T1400 600" fill="none" stroke="#4cc3ea" stroke-opacity=".55" stroke-width="2.5"/></g><g class="w2"><path d="M-200 630 Q-150 592 -100 630 T0 630 T100 630 T200 630 T300 630 T400 630 T500 630 T600 630 T700 630 T800 630 T900 630 T1000 630 T1100 630 T1200 630 T1300 630 T1400 630" fill="none" stroke="#9fd8ee" stroke-opacity=".35" stroke-width="2.5"/></g><g class="w3"><path d="M-200 660 Q-150 632 -100 660 T0 660 T100 660 T200 660 T300 660 T400 660 T500 660 T600 660 T700 660 T800 660 T900 660 T1000 660 T1100 660 T1200 660 T1300 660 T1400 660" fill="none" stroke="#4cc3ea" stroke-opacity=".25" stroke-width="2.5"/></g><rect y="520" width="1000" height="180" fill="url(#fade)"/></svg>
+<div class="wrap hero-grid"><div class="hero-text" id="hero-text">
+<p class="pills"><span class="pill">ملف الإنجاز المهني</span><span class="pill">العام الدراسي <span class="ph">1447هـ</span></span></p>
+<h1>الأستاذ/ة <span class="ph">الاسم الثلاثي</span></h1>
+<p class="role">معلم/ة الفيزياء – المرحلة الثانوية</p>
+<p class="meta"><span class="ph">اسم المدرسة</span> · إدارة تعليم <span class="ph">المنطقة</span></p>
+<p class="quote">نتعلم الفيزياء لنفهم العالم، لا لنحفظ القوانين.</p>
+<p class="intro">أؤمن بأن الفيزياء علم يُفهم بالتجربة والملاحظة قبل المعادلات. أربط المفاهيم الفيزيائية بالحياة اليومية، وأنمّي مهارات التفكير العلمي وحل المسائل لدى طلابي، وأوظّف التقنية والمختبرات الافتراضية في تعزيز التعلم، بما يتوافق مع رؤية المملكة 2030 وأهداف سياسة التعليم.</p>
+</div><svg class="atom" viewBox="-220 -220 440 440" aria-hidden="true"><defs><radialGradient id="ng"><stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="#4cc3ea"/><stop offset="1" stop-color="#4cc3ea" stop-opacity="0"/></radialGradient></defs>
+<circle r="205" fill="none" stroke="#4cc3ea" stroke-opacity=".18" stroke-dasharray="3 11" class="ring"/>
+<g class="spin"><g fill="none" stroke="#4cc3ea" stroke-opacity=".55" stroke-width="1.6"><ellipse rx="170" ry="60"/><ellipse rx="170" ry="60" transform="rotate(60)"/><ellipse rx="170" ry="60" transform="rotate(120)"/></g>
+<circle r="7" fill="#fff"><animateMotion dur="5s" repeatCount="indefinite" path="M170,0 A170,60 0 1,1 -170,0 A170,60 0 1,1 170,0"/></circle>
+<g transform="rotate(60)"><circle r="7" fill="#9fd8ee"><animateMotion dur="7s" repeatCount="indefinite" path="M170,0 A170,60 0 1,1 -170,0 A170,60 0 1,1 170,0"/></circle></g>
+<g transform="rotate(120)"><circle r="7" fill="#fff"><animateMotion dur="6s" begin="-2s" repeatCount="indefinite" path="M170,0 A170,60 0 1,1 -170,0 A170,60 0 1,1 170,0"/></circle></g></g>
+<circle r="52" fill="url(#ng)" class="pulse"/><circle r="12" fill="#fff"/></svg></div></header>
 <main class="wrap">
-  <div class="stats" aria-label="إحصائيات مختصرة">
+<section class="page" data-page="about" hidden><div class="inner"><div class="pagehead"><a class="back" href="#home">→ الرئيسية</a><h2>عن المعلم</h2></div><div class="pc"><div class="stats" aria-label="إحصائيات مختصرة">
     <div><b class="ph">0</b><span>دورة تدريبية</span></div>
     <div><b class="ph">0</b><span>درس نموذجي</span></div>
     <div><b class="ph">0</b><span>تجربة عملية منفذة</span></div>
     <div><b class="ph">0</b><span>طالب مكرَّم</span></div>
-  </div>
-
-  <section id="about" class="about">
-    <h2>نبذة تعريفية</h2>
-    <p class="lead">فلسفتي في التعليم باختصار.</p>
-    <p>معلم فيزياء في المرحلة الثانوية، أؤمن بأن الفيزياء علم يُفهم بالتجربة والملاحظة قبل المعادلات. أربط المفاهيم الفيزيائية بالحياة اليومية، وأنمّي مهارات التفكير العلمي وحل المسائل لدى طلابي.</p>
-    <p>أوظّف التقنية والمختبرات الافتراضية في تعزيز التعلم، بما يتوافق مع رؤية المملكة 2030 وأهداف سياسة التعليم.</p>
-  </section>
-
-  <section id="framework" aria-labelledby="t1">
-    <h2 id="t1">الأقسام</h2>
-    <p class="lead">كل قسم يضم الصفحات المرتبطة به. اربط كل زر بصفحته أو ملفه.</p>
-
-    <div class="block" id="about-teacher"><div><h3>عن المعلم</h3><p>الهوية المهنية والمؤهلات.</p></div>
-      <ul class="items">
+  </div><p class="lead">الهوية المهنية والمؤهلات.</p><ul class="items">
         <li><div>السيرة الذاتية<small>المؤهلات والخبرات والمهارات</small></div><a class="btn" href="#">عرض</a></li>
         <li><div>الشهادات<small>المؤهل العلمي وشهادات الشكر</small></div><a class="btn" href="#">عرض</a></li>
         <li><div>الرؤية والرسالة والقيم<small>ما أسعى إليه في ممارستي التعليمية</small></div><a class="btn" href="#">عرض</a></li>
-      </ul></div>
-
-    <div class="block"><div><h3>الإطار المهني</h3><p>المرجعيات التي تحكم عملي.</p></div>
-      <ul class="items">
+      </ul></div><p class="foot-back"><a class="back" href="#home">→ العودة إلى الصفحة الرئيسية</a></p></div></section>
+<section class="page" data-page="framework" hidden><div class="inner"><div class="pagehead"><a class="back" href="#home">→ الرئيسية</a><h2>الإطار المهني</h2></div><div class="pc"><p class="lead">المرجعيات التي تحكم عملي.</p><ul class="items">
         <li><div>الأهداف العامة لسياسة التعليم في المملكة العربية السعودية</div><a class="btn" href="#">عرض</a></li>
         <li><div>ميثاق أخلاقيات مهنة التعليم</div><a class="btn" href="#">عرض</a></li>
         <li><div>سجل الاطّلاع<small>توقيع المشرفين إلكترونياً</small></div><a class="btn" href="#register">فتح السجل</a></li>
-      </ul></div>
-
-    <div class="block" id="performance"><div><h3>الأداء الوظيفي</h3><p>التخطيط والمتابعة اليومية.</p></div>
-      <ul class="items">
+      </ul></div><p class="foot-back"><a class="back" href="#home">→ العودة إلى الصفحة الرئيسية</a></p></div></section>
+<section class="page" data-page="performance" hidden><div class="inner"><div class="pagehead"><a class="back" href="#home">→ الرئيسية</a><h2>الأداء الوظيفي</h2></div><div class="pc"><p class="lead">التخطيط والمتابعة اليومية.</p><ul class="items">
         <li><div>جدول الحصص</div><a class="btn" href="#">عرض</a></li>
         <li><div>توزيع المنهج<small>الخطة الزمنية لوحدات الفيزياء</small></div><a class="btn" href="#">عرض</a></li>
         <li><div>سجل الحضور والمتابعة<small>الصفان الثاني والثالث الثانوي · نماذج دون أسماء الطلاب</small></div><a class="btn" href="#">عرض</a></li>
-      </ul></div>
-
-    <div class="block" id="production"><div><h3>الإنتاج التعليمي</h3><p>ما أقدّمه للطلاب داخل الفصل.</p></div>
-      <ul class="items">
+      </ul></div><p class="foot-back"><a class="back" href="#home">→ العودة إلى الصفحة الرئيسية</a></p></div></section>
+<section class="page" data-page="production" hidden><div class="inner"><div class="pagehead"><a class="back" href="#home">→ الرئيسية</a><h2>الإنتاج التعليمي</h2></div><div class="pc"><p class="lead">ما أقدّمه للطلاب داخل الفصل.</p><ul class="items">
         <li><div>أوراق العمل<small>مسائل مصنّفة بحسب مستويات التفكير</small></div><a class="btn" href="#">عرض</a></li>
         <li><div>الدروس النموذجية<small>الأهداف والأنشطة وأساليب التقويم</small></div><a class="btn" href="#">عرض</a></li>
         <li><div>شواهد التجارب المنفذة<small>صور وفيديو لكل تجربة</small></div><a class="btn" href="#">عرض</a></li>
-      </ul></div>
-
-    <div class="block" id="growth"><div><h3>التطوير والتميّز</h3><p>النمو المهني وأثره في الطلاب.</p></div>
-      <ul class="items">
+      </ul><h3 class="sub">من تجارب الفصل</h3><p class="lead">أمثلة مختصرة لتجارب نفّذها الطلاب داخل الفصل.</p><div class="exp">
+      <div><h4 class="ph">اسم التجربة 1</h4><p>الوحدة: <span class="ph">الحركة</span>. ما الذي قاسه الطلاب وماذا استنتجوا؟</p></div>
+      <div><h4 class="ph">اسم التجربة 2</h4><p>الوحدة: <span class="ph">الكهرباء</span>. الأدوات والنتيجة في سطرين.</p></div>
+      <div><h4 class="ph">محاكاة PhET</h4><p>الوحدة: <span class="ph">الموجات</span>. كيف دعمت المحاكاة فهم المفهوم؟</p></div>
+    </div></div><p class="foot-back"><a class="back" href="#home">→ العودة إلى الصفحة الرئيسية</a></p></div></section>
+<section class="page" data-page="growth" hidden><div class="inner"><div class="pagehead"><a class="back" href="#home">→ الرئيسية</a><h2>التطوير والتميّز</h2></div><div class="pc"><p class="lead">النمو المهني وأثره في الطلاب.</p><ul class="items">
         <li><div>التطوير المهني</div><a class="btn" href="#">عرض</a></li>
         <li><div>الدورات التدريبية المنفذة<small>اسم الدورة · الجهة · التاريخ · الساعات</small></div><a class="btn" href="#">عرض</a></li>
         <li><div>تكريم الطلاب<small>المتميزون في الفيزياء والمسابقات العلمية</small></div><a class="btn" href="#">عرض</a></li>
-      </ul></div>
-  </section>
-
-  <section id="register" aria-labelledby="t3">
-    <h2 id="t3">سجل الاطّلاع</h2>
+      </ul></div><p class="foot-back"><a class="back" href="#home">→ العودة إلى الصفحة الرئيسية</a></p></div></section>
+<section class="page" data-page="register" hidden aria-labelledby="t3"><div class="inner"><div class="pagehead"><a class="back" href="#home">→ الرئيسية</a><h2 id="t3">سجل الاطّلاع</h2></div>
+    
     <p class="lead">يكتب المشرف اسمه، ثم يضغط «توقيع» ويوقّع بإصبعه على الجوال أو الآيباد.</p>
     <div class="reg-wrap"><table class="reg"><thead><tr><th>م</th><th>الاسم</th><th>الصفة / الجهة</th><th>التاريخ (هـ)</th><th>الملاحظات</th><th>التوقيع</th></tr></thead><tbody id="rows"></tbody></table></div>
     <div class="tools"><button id="add">إضافة 5 صفوف</button><button class="ghost" id="print">طباعة / حفظ PDF</button></div>
     <p class="note" id="mode" style="margin-top:0"></p>
     <dialog id="dlg"><p id="who"></p><canvas id="cv"></canvas><div class="tools"><button id="ok">حفظ التوقيع</button><button class="ghost" id="clr">مسح</button><button class="ghost" id="cancel">إغلاق</button></div></dialog>
-  </section>
-
-  <section aria-labelledby="t2">
-    <h2 id="t2">من تجارب الفصل</h2>
-    <p class="lead">أمثلة مختصرة. استبدلها بتجاربك الفعلية.</p>
-    <div class="exp">
-      <div><h4 class="ph">اسم التجربة 1</h4><p>الوحدة: <span class="ph">الحركة</span>. ما الذي قاسه الطلاب وماذا استنتجوا؟</p></div>
-      <div><h4 class="ph">اسم التجربة 2</h4><p>الوحدة: <span class="ph">الكهرباء</span>. الأدوات والنتيجة في سطرين.</p></div>
-      <div><h4 class="ph">محاكاة PhET</h4><p>الوحدة: <span class="ph">الموجات</span>. كيف دعمت المحاكاة فهم المفهوم؟</p></div>
-    </div>
-    <p class="note">قبل النشر: أخفِ أسماء الطلاب في السجلات، واضبط صلاحية الملفات في Drive على الأشخاص المعنيين فقط.</p>
-  </section>
+  <p class="foot-back"><a class="back" href="#home">→ العودة إلى الصفحة الرئيسية</a></p></div></section>
 </main>
-
 <footer id="contact"><div class="wrap">
   <div><p><b>للتواصل</b></p><p><span class="ph">البريد الرسمي</span></p></div>
   <div><p><span class="ph">اسم المدرسة</span></p><p>© <span class="ph">الاسم</span> · <span class="ph">1447هـ</span></p><p><a href="#" id="loginLink" style="font-size:13px;opacity:.65">دخول الإدارة</a></p></div>
@@ -258,7 +251,7 @@ if(C&&C.apiKey&&C.apiKey.indexOf('PASTE')<0){Promise.all([import(B+'firebase-app
  var app=m[0].initializeApp(C),fs=m[1],au=m[2],fdb=fs.getFirestore(app),auth=au.getAuth(app);
  store=true;modeEl.textContent='السجل مشترك: تظهر التواقيع لكل من يفتح الرابط.';
  window.__save=function(rid,d){var r=fs.doc(fdb,'log',rid);if(!Object.keys(d).length){fs.deleteDoc(r).catch(function(){});return}if(!window.__isAdmin&&!d.sig)return;fs.setDoc(r,d).catch(function(){alert('تعذّر الحفظ. ربما سبقك أحد إلى هذا الصف، اختر صفاً فارغاً.')})};
- window.__saveZones=function(z){return fs.setDoc(fs.doc(fdb,'site','content'),{z:z})};
+ window.__saveZones=function(z){return fs.setDoc(fs.doc(fdb,'site','v2'),{z:z})};
  window.__login=function(u,p){return au.signInWithEmailAndPassword(auth,u.indexOf('@')>-1?u:u+'@admin.local',p)};
  window.__logout=function(){return au.signOut(auth)};
  var CH=600000;
@@ -266,14 +259,14 @@ if(C&&C.apiKey&&C.apiKey.indexOf('PASTE')<0){Promise.all([import(B+'firebase-app
  window.__getFile=function(id){return fs.getDoc(fs.doc(fdb,'files',id)).then(function(m){if(!m.exists())throw 0;var t=m.data(),ps=[];for(var k=0;k<t.n;k++)ps.push(fs.getDoc(fs.doc(fdb,'files',id,'c',String(k))));return Promise.all(ps).then(function(a){var bin=atob(a.map(function(x){return x.data().d}).join('')),u=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);return new Blob([u],{type:t.type==='application/pdf'?'application/pdf':'image/jpeg'})})})};
  window.__delFile=function(id){return fs.getDoc(fs.doc(fdb,'files',id)).then(function(m){if(!m.exists())return;var b=fs.writeBatch(fdb);for(var k=0;k<m.data().n;k++)b.delete(fs.doc(fdb,'files',id,'c',String(k)));b.delete(fs.doc(fdb,'files',id));return b.commit()}).catch(function(){})};
  fs.onSnapshot(fs.collection(fdb,'log'),function(sn){sn.docChanges().forEach(function(c){var k=c.doc.id,n=parseInt(k.slice(1),10);if(c.type==='removed')delete data[k];else data[k]=c.doc.data();if(n>rows)rows=n});if(!tb.contains(document.activeElement)&&!dlg.open)draw()});
- fs.getDoc(fs.doc(fdb,'site','content')).then(function(x){if(x.exists()&&window.__init)window.__init({zones:x.data().z})}).catch(function(){}).then(function(){
+ fs.getDoc(fs.doc(fdb,'site','v2')).then(function(x){if(x.exists()&&window.__init)window.__init({zones:x.data().z})}).catch(function(){}).then(function(){
   au.onAuthStateChanged(auth,function(u){var ok=!!u&&u.email===window.ADMIN_EMAIL;window.__isAdmin=ok;if(window.__setAdmin)window.__setAdmin(ok)})})
 })}
 })();
 </script>
 <script>
 (function(){
-var Z=['.hero-grid','.stats','#about','#framework','section[aria-labelledby=t2]','footer .wrap'];
+var Z=['#hero-text','[data-page=about] .pc','[data-page=framework] .pc','[data-page=performance] .pc','[data-page=production] .pc','[data-page=growth] .pc','footer .wrap'];
 var TXT='h1,h2,h3,h4,p,small,.stats b,.stats span,.items li>div';
 var editing=true,db=null,msg=document.getElementById('aMsg');
 function zs(){return Z.map(function(s){return document.querySelector(s)})}
@@ -283,7 +276,7 @@ function cc(el){var c=el.cloneNode(true);c.querySelectorAll('.adm').forEach(func
 function snapshot(){return zs().map(function(el){return cc(el).innerHTML})}
 function mk(txt,fn,cls){var b=document.createElement('button');b.type='button';b.className='adm '+cls;b.textContent=txt;b.addEventListener('click',fn);return b}
 function refresh(){decorate();setEd(editing)}
-function setEd(on){editing=on;document.body.classList.toggle('editing',on);document.querySelectorAll(TXT).forEach(function(el){if(el.closest('#register,#admbar,nav,dialog'))return;if(on)el.setAttribute('contenteditable','true');else el.removeAttribute('contenteditable')})}
+function setEd(on){editing=on;document.body.classList.toggle('editing',on);document.querySelectorAll(TXT).forEach(function(el){if(el.closest('[data-page=register],#admbar,nav,dialog,.pagehead'))return;if(on)el.setAttribute('contenteditable','true');else el.removeAttribute('contenteditable')})}
 function readB64(f){return new Promise(function(ok,no){var r=new FileReader();r.onload=function(){ok(String(r.result).split(',')[1])};r.onerror=no;r.readAsDataURL(f)})}
 function shrink(f){return new Promise(function(ok,no){var u=URL.createObjectURL(f),im=new Image();im.onload=function(){var k=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);var q=.85,d;do{d=c.toDataURL('image/jpeg',q);q-=.1}while(d.length>2000000&&q>.3);ok(d.split(',')[1])};im.onerror=no;im.src=u})}
 function pickFile(ul,at){
@@ -328,6 +321,17 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 document.getElementById('lcancel').onclick=function(){ld.close()};
 document.getElementById('lok').onclick=function(){if(!window.__login){lm.textContent='لم تُضبط قاعدة البيانات بعد.';return}lm.textContent='...';window.__login(document.getElementById('lu').value.trim().toLowerCase(),document.getElementById('lp').value).then(function(){ld.close();document.getElementById('lp').value='';lm.textContent=''}).catch(function(e){var c=(e&&e.code)||'';lm.textContent=(c==='auth/operation-not-allowed'?'لم يُفعَّل Email/Password في Firebase.':c==='auth/too-many-requests'?'محاولات كثيرة، انتظر قليلاً ثم أعد المحاولة.':c==='auth/network-request-failed'?'مشكلة في الاتصال بالإنترنت.':'البريد أو كلمة السر غير صحيحة، أو لم يُضف المستخدم.')+' ('+c+')'})};
 })();
+</script>
+<script>
+(function(){var N=['home','about','framework','performance','production','growth','register'];
+function show(){var h=(location.hash||'#home').slice(1);if(N.indexOf(h)<0)h='home';
+document.querySelectorAll('[data-page]').forEach(function(p){p.hidden=p.getAttribute('data-page')!==h});
+document.getElementById('home').hidden=h!=='home';
+document.querySelectorAll('#topnav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+h)});
+window.scrollTo(0,0)}
+window.addEventListener('hashchange',show);show();
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#"]');if(a)e.preventDefault()});
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('svg').forEach(function(v){if(v.pauseAnimations)v.pauseAnimations()})})();
 </script>
 </body>
 </html>
