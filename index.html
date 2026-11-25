@@ -128,12 +128,29 @@ a.back{display:inline-block;text-decoration:none;background:var(--accent);color:
 .pc .lead{margin-bottom:8px}
 .pc h3.sub{margin:28px 0 4px;font-size:22px}
 @media (max-width:720px){.hero{min-height:auto;padding:36px 0 28px}.hero-grid{grid-template-columns:1fr}.atom{max-width:280px;order:-1}.pagehead h2{font-size:24px}}
+
+.cv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}
+.cv-editor label{display:block;font-size:15px;font-weight:600;color:var(--ink)}
+.cv-editor input,.cv-editor textarea{display:block;width:100%;margin-top:4px;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit;font-weight:400}
+.cv-editor textarea{resize:vertical;line-height:1.7}
+.cv-wide{display:block;margin:12px 0}
+.timetable{min-width:780px}
+.timetable th:first-child{width:74px}
+.timetable td{padding:3px}
+.timetable input{min-height:46px}
+@media(max-width:720px){.cv-grid{grid-template-columns:1fr}}
+@media print{
+ .cv-editor input,.cv-editor textarea,.timetable input{border:0!important;background:transparent!important;padding:2px!important}
+ .cv-editor .tools,.schedule-editor .tools{display:none!important}
+ .cv-editor textarea{height:auto;overflow:visible}
+}
+
 </style>
 </head>
 <body>
 <!-- دليل التعديل: النصوص المظللة بالأصفر هي بيانات تستبدلها ببياناتك. -->
-<nav id="topnav" aria-label="التنقل الرئيسي"><div class="wrap"><a href="#home">الرئيسية</a><a href="#about">عن المعلم</a><a href="#framework">الإطار المهني</a><a href="#performance">الأداء الوظيفي</a><a href="#production">الإنتاج التعليمي</a><a href="#growth">التطوير والتميّز</a><a href="#register">سجل الاطّلاع</a></div></nav>
-<div class="admbar" id="admbar"><div class="wrap"><b>وضع الإدارة (لا يظهر للمشاهدين)</b><button id="aEdit">تعديل النص: تشغيل</button><button id="aSave">حفظ التغييرات</button><button id="aPh">إزالة التظليل الأصفر</button><button id="aOut">تسجيل الخروج</button><span id="aMsg"></span></div></div>
+<nav id="topnav" aria-label="التنقل الرئيسي"><div class="wrap"><a href="#home">الرئيسية</a><a href="#about">عن المعلم / السيرة الذاتية</a><a href="#framework">الإطار المهني</a><a href="#performance">الأداء الوظيفي / جدول الحصص</a><a href="#production">الإنتاج التعليمي</a><a href="#growth">التطوير والتميّز</a><a href="#register">سجل الاطّلاع</a></div></nav>
+<div class="admbar" id="admbar"><div class="wrap"><b>وضع الإدارة (لا يظهر للمشاهدين)</b><button id="aEdit">تعديل النص: تشغيل</button><button id="aSave">حفظ التغييرات</button><button id="aPh">إزالة التظليل الأصفر</button><label>خط الاسم <select id="heroFont" style="font:inherit"><option value='"Noto Naskh Arabic",Tahoma,serif'>نسخ عربي</option><option value='Tahoma,Arial,sans-serif'>Tahoma</option><option value='"Segoe UI",Tahoma,sans-serif'>Segoe UI</option><option value='Arial,sans-serif'>Arial</option><option value='"Traditional Arabic",serif'>Traditional Arabic</option></select></label><label>سمك الخط <select id="heroWeight" style="font:inherit"><option value="400">عادي</option><option value="500">متوسط</option><option value="600">شبه عريض</option><option value="700" selected>عريض</option><option value="800">عريض جداً</option></select></label><button id="aOut">تسجيل الخروج</button><span id="aMsg"></span></div></div>
 <header class="hero" id="home"><svg class="scene" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
 <defs><pattern id="g" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#4cc3ea" stroke-opacity=".09"/></pattern>
 <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient></defs>
@@ -160,7 +177,32 @@ a.back{display:inline-block;text-decoration:none;background:var(--accent);color:
     <div><b class="ph">0</b><span>درس نموذجي</span></div>
     <div><b class="ph">0</b><span>تجربة عملية منفذة</span></div>
     <div><b class="ph">0</b><span>طالب مكرَّم</span></div>
-  </div><p class="lead">الهوية المهنية والمؤهلات.</p><ul class="items">
+  </div><p class="lead">السيرة الذاتية المهنية — اكتب بياناتك مباشرة في الحقول التالية، وسيتم حفظها تلقائياً على هذا الجهاز.</p>
+<div class="cv-editor" id="cvEditor">
+<h3 class="sub">البيانات الشخصية والمهنية</h3>
+<div class="cv-grid">
+<label>الاسم الكامل<input data-cv="fullname" placeholder="اكتب الاسم الكامل"></label>
+<label>المسمى الوظيفي<input data-cv="job" placeholder="معلم الفيزياء"></label>
+<label>التخصص<input data-cv="specialty" placeholder="فيزياء / علوم"></label>
+<label>المؤهل العلمي<input data-cv="degree" placeholder="بكالوريوس ..."></label>
+<label>الجامعة / جهة التخرج<input data-cv="university" placeholder="اسم الجامعة"></label>
+<label>سنة التخرج<input data-cv="graduation" placeholder="1440هـ / 2019م"></label>
+<label>سنوات الخبرة<input data-cv="experience" placeholder="عدد السنوات"></label>
+<label>المدرسة الحالية<input data-cv="school" placeholder="اسم المدرسة"></label>
+<label>إدارة التعليم<input data-cv="education" placeholder="الإدارة / المنطقة"></label>
+<label>البريد الإلكتروني<input data-cv="email" placeholder="البريد الرسمي"></label>
+<label>رقم التواصل<input data-cv="phone" placeholder="رقم الجوال"></label>
+<label>المدينة<input data-cv="city" placeholder="المدينة"></label>
+</div>
+<label class="cv-wide">النبذة المهنية<textarea data-cv="summary" rows="4" placeholder="اكتب نبذة مهنية موجزة عن خبرتك ورسالتك التعليمية..."></textarea></label>
+<label class="cv-wide">الخبرات العملية<textarea data-cv="work" rows="5" placeholder="اسم المدرسة — المسمى — الفترة — أبرز المهام والإنجازات (كل خبرة في سطر)"></textarea></label>
+<label class="cv-wide">المهارات المهنية والتقنية<textarea data-cv="skills" rows="4" placeholder="التخطيط للتدريس، إدارة الصف، التقويم، المختبرات، التقنية التعليمية..."></textarea></label>
+<label class="cv-wide">الدورات والشهادات<textarea data-cv="courses" rows="4" placeholder="اسم الدورة — الجهة — التاريخ — عدد الساعات"></textarea></label>
+<label class="cv-wide">الإنجازات والمبادرات<textarea data-cv="achievements" rows="4" placeholder="المبادرات، الجوائز، المشاركات، نتائج الطلاب..."></textarea></label>
+<label class="cv-wide">الرؤية والرسالة والقيم<textarea data-cv="vision" rows="3" placeholder="رؤيتك ورسالتك والقيم التي تستند إليها في التعليم"></textarea></label>
+<div class="tools"><button type="button" id="cvPrint">طباعة السيرة الذاتية / حفظ PDF</button><button type="button" class="ghost" id="cvClear">مسح بيانات السيرة الذاتية</button></div>
+</div>
+<ul class="items">
         <li><div>السيرة الذاتية<small>المؤهلات والخبرات والمهارات</small></div><a class="btn" href="#">عرض</a></li>
         <li><div>الشهادات<small>المؤهل العلمي وشهادات الشكر</small></div><a class="btn" href="#">عرض</a></li>
         <li><div>الرؤية والرسالة والقيم<small>ما أسعى إليه في ممارستي التعليمية</small></div><a class="btn" href="#">عرض</a></li>
@@ -170,7 +212,12 @@ a.back{display:inline-block;text-decoration:none;background:var(--accent);color:
         <li><div>ميثاق أخلاقيات مهنة التعليم</div><a class="btn" href="#">عرض</a></li>
         <li><div>سجل الاطّلاع<small>توقيع المشرفين إلكترونياً</small></div><a class="btn" href="#register">فتح السجل</a></li>
       </ul></div><p class="foot-back"><a class="back" href="#home">→ العودة إلى الصفحة الرئيسية</a></p></div></section>
-<section class="page" data-page="performance" hidden><div class="inner"><div class="pagehead"><a class="back" href="#home">→ الرئيسية</a><h2>الأداء الوظيفي</h2></div><div class="pc"><p class="lead">التخطيط والمتابعة اليومية.</p><ul class="items">
+<section class="page" data-page="performance" hidden><div class="inner"><div class="pagehead"><a class="back" href="#home">→ الرئيسية</a><h2>الأداء الوظيفي</h2></div><div class="pc"><p class="lead">جدول الحصص الأسبوعي — اكتب اسم المادة أو الصف أو الفصل في الخانات، ويتم الحفظ تلقائياً.</p>
+<div class="schedule-editor">
+<div class="tools"><button type="button" id="schedulePrint">طباعة جدول الحصص / حفظ PDF</button><button type="button" class="ghost" id="scheduleClear">مسح الجدول</button></div>
+<div class="reg-wrap"><table class="reg timetable" id="timetable"><thead><tr><th>الحصة</th><th>الأحد</th><th>الاثنين</th><th>الثلاثاء</th><th>الأربعاء</th><th>الخميس</th></tr></thead><tbody></tbody></table></div>
+<p class="note">يمكن كتابة المادة والصف أو الفصل داخل كل خانة، مثل: فيزياء — 2/1.</p>
+</div><ul class="items">
         <li><div>جدول الحصص</div><a class="btn" href="#">عرض</a></li>
         <li><div>توزيع المنهج<small>الخطة الزمنية لوحدات الفيزياء</small></div><a class="btn" href="#">عرض</a></li>
         <li><div>سجل الحضور والمتابعة<small>الصفان الثاني والثالث الثانوي · نماذج دون أسماء الطلاب</small></div><a class="btn" href="#">عرض</a></li>
@@ -322,6 +369,43 @@ document.getElementById('lcancel').onclick=function(){ld.close()};
 document.getElementById('lok').onclick=function(){if(!window.__login){lm.textContent='لم تُضبط قاعدة البيانات بعد.';return}lm.textContent='...';window.__login(document.getElementById('lu').value.trim().toLowerCase(),document.getElementById('lp').value).then(function(){ld.close();document.getElementById('lp').value='';lm.textContent=''}).catch(function(e){var c=(e&&e.code)||'';lm.textContent=(c==='auth/operation-not-allowed'?'لم يُفعَّل Email/Password في Firebase.':c==='auth/too-many-requests'?'محاولات كثيرة، انتظر قليلاً ثم أعد المحاولة.':c==='auth/network-request-failed'?'مشكلة في الاتصال بالإنترنت.':'البريد أو كلمة السر غير صحيحة، أو لم يُضف المستخدم.')+' ('+c+')'})};
 })();
 </script>
+
+<script>
+(function(){
+  var cvKey='teacher_cv_v1', scheduleKey='teacher_schedule_v1';
+  function load(key){try{return JSON.parse(localStorage.getItem(key)||'{}')}catch(e){return {}}}
+  function save(key,obj){try{localStorage.setItem(key,JSON.stringify(obj))}catch(e){}}
+  var cv=load(cvKey);
+  document.querySelectorAll('[data-cv]').forEach(function(el){
+    var k=el.getAttribute('data-cv'); if(cv[k])el.value=cv[k];
+    el.addEventListener('input',function(){cv[k]=el.value;save(cvKey,cv)});
+  });
+  var days=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس'], tbody=document.querySelector('#timetable tbody'), sched=load(scheduleKey);
+  for(var period=1;period<=7;period++){
+    var tr=document.createElement('tr'), th=document.createElement('th');th.textContent='الحصة '+period;tr.appendChild(th);
+    days.forEach(function(day){
+      var td=document.createElement('td'),input=document.createElement('input'),key=period+'_'+day;
+      input.type='text';input.placeholder='المادة / الصف';input.setAttribute('aria-label','الحصة '+period+' يوم '+day);input.value=sched[key]||'';
+      input.addEventListener('input',function(){sched[key]=input.value;save(scheduleKey,sched)});
+      td.appendChild(input);tr.appendChild(td);
+    });tbody.appendChild(tr);
+  }
+  document.getElementById('cvPrint').addEventListener('click',function(){window.print()});
+  document.getElementById('schedulePrint').addEventListener('click',function(){window.print()});
+  document.getElementById('cvClear').addEventListener('click',function(){if(confirm('مسح جميع بيانات السيرة الذاتية؟')){cv={};save(cvKey,cv);document.querySelectorAll('[data-cv]').forEach(function(el){el.value=''})}});
+  document.getElementById('scheduleClear').addEventListener('click',function(){if(confirm('مسح جدول الحصص بالكامل؟')){sched={};save(scheduleKey,sched);tbody.querySelectorAll('input').forEach(function(el){el.value=''})}});
+  // Home page teacher name font controls; saved in the editable hero section.
+  var name=document.querySelector('.hero h1');
+  var font=document.getElementById('heroFont'),weight=document.getElementById('heroWeight');
+  function restoreType(){if(!name)return;var span=name.querySelector('.ph');if(span){if(name.dataset.nameFont)span.style.fontFamily=name.dataset.nameFont;if(name.dataset.nameWeight)span.style.fontWeight=name.dataset.nameWeight}}
+  if(name){
+    restoreType();
+    if(font)font.addEventListener('change',function(){var span=name.querySelector('.ph');if(span){span.style.fontFamily=font.value;name.dataset.nameFont=font.value}});
+    if(weight)weight.addEventListener('change',function(){var span=name.querySelector('.ph');if(span){span.style.fontWeight=weight.value;name.dataset.nameWeight=weight.value}});
+  }
+})();
+</script>
+
 <script>
 (function(){var N=['home','about','framework','performance','production','growth','register'];
 function show(){var h=(location.hash||'#home').slice(1);if(N.indexOf(h)<0)h='home';
