@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300..900&family=Changa:wght@300..800&family=El+Messiri:wght@400..700&family=Lalezar&family=Noto+Kufi+Arabic:wght@300..900&family=Reem+Kufi:wght@400..700&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <title>ملف الإنجاز المهني – معلم/ة الفيزياء</title>
 <style>
 :root{
@@ -129,28 +130,74 @@ a.back{display:inline-block;text-decoration:none;background:var(--accent);color:
 .pc h3.sub{margin:28px 0 4px;font-size:22px}
 @media (max-width:720px){.hero{min-height:auto;padding:36px 0 28px}.hero-grid{grid-template-columns:1fr}.atom{max-width:280px;order:-1}.pagehead h2{font-size:24px}}
 
-.cv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}
-.cv-editor label{display:block;font-size:15px;font-weight:600;color:var(--ink)}
-.cv-editor input,.cv-editor textarea{display:block;width:100%;margin-top:4px;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit;font-weight:400}
-.cv-editor textarea{resize:vertical;line-height:1.7}
-.cv-wide{display:block;margin:12px 0}
-.timetable{min-width:780px}
-.timetable th:first-child{width:74px}
-.timetable td{padding:3px}
-.timetable input{min-height:46px}
-@media(max-width:720px){.cv-grid{grid-template-columns:1fr}}
+/* ===== السيرة الذاتية ===== */
+.tbtn{margin-inline-start:auto;font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 16px;font-size:15px}
+.cv-top{padding-bottom:16px;border-bottom:3px solid var(--accent);margin-bottom:4px}
+.cv-name{font-size:clamp(26px,4.5vw,36px);margin:0;line-height:1.4}
+.cv-title{color:var(--accent);font-size:19px;margin:0 0 12px;font-weight:700}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px 22px}
+.kv div{display:flex;gap:8px;align-items:baseline}
+.kv b{color:var(--muted);font-size:14px;font-weight:600;white-space:nowrap}
+.cv-sec{padding:16px 0 6px;border-bottom:1px solid var(--line)}
+.cv-sec:last-child{border-bottom:0}
+.cv-h{margin:0 0 10px;font-size:20px;color:var(--accent);display:flex;align-items:center;gap:10px}
+.cv-h::before{content:"";width:6px;height:22px;border-radius:3px;background:var(--accent);flex:none}
+.cv-p{margin:0 0 8px;max-width:none}
+.cv-entry{padding:10px 0;border-bottom:1px dashed var(--line)}
+.cv-entry:last-child{border-bottom:0}
+.cv-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.cv-row b{font-size:17px}
+.cv-date{color:var(--muted);font-size:14px}
+.cv-sub{margin:0 0 4px;color:var(--accent);font-size:15px}
+.cvl{margin:6px 0 4px;padding-inline-start:22px}
+.cvl li{margin:3px 0;line-height:1.8}
+.cvl li .xbtn,.chip .xbtn{width:20px;height:20px;font-size:12px;margin-inline-start:8px;vertical-align:middle}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.chip{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:2px 14px;font-size:15px;display:inline-flex;align-items:center;gap:4px}
+/* ===== جدول الحصص ===== */
+.tt-info{display:flex;gap:4px 28px;flex-wrap:wrap;margin:0 0 14px}
+.tt-info p{margin:0;font-size:16px}
+.tt-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table.tt{width:100%;border-collapse:collapse;min-width:640px;table-layout:fixed}
+.tt th,.tt td{border:1px solid var(--line);padding:6px;text-align:center;vertical-align:middle}
+.tt thead th{background:var(--hero);color:var(--hero-ink);font-size:16px;padding:10px 6px}
+.tt tbody th{background:var(--bg);width:112px;font-size:15px;line-height:1.5;font-weight:700}
+.tt tbody th small{display:block;color:var(--muted);font-size:12px;font-weight:400;line-height:1.5}
+.tt td{height:68px;font-size:15px;line-height:1.6}
+.tt td:empty::before{content:"—";color:var(--line)}
+.tt td.filled{background:rgba(10,126,164,.12);font-weight:600}
+.tt-count{margin-top:12px;color:var(--muted);font-size:15px}
+.tt-count b{color:var(--accent);font-size:20px}
+.admonly{display:none}
+body.isadmin .admonly{display:block}
+/* ===== أدوات الخط (للمشرف) ===== */
+body.isadmin .admbar{position:sticky;top:0;z-index:60;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.fontbar{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
+.admbar label{display:inline-flex;gap:6px;align-items:center}
+.admbar select,.admbar input[type=number]{font:inherit;padding:4px 8px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.admbar input[type=number]{width:78px}
+#fTarget{color:var(--muted);font-size:14px}
+/* ===== الطباعة ===== */
 @media print{
- .cv-editor input,.cv-editor textarea,.timetable input{border:0!important;background:transparent!important;padding:2px!important}
- .cv-editor .tools,.schedule-editor .tools{display:none!important}
- .cv-editor textarea{height:auto;overflow:visible}
+ :root:not(#x){--bg:#fff;--surface:#fff;--ink:#000;--muted:#333;--line:#999;--accent:#0a5f7d;--hero:#0b2540;--hero-ink:#fff}
+ body{background:#fff!important;color:#000!important}
+ .pagehead,.foot-back,.admbar,.xbtn,.addbtn,.noprint,.admonly{display:none!important}
+ .ph{background:none!important}
+ .pc{border:0!important;padding:0!important}
+ .inner{padding:0!important}
+ .cv-entry,.cv-sec{break-inside:avoid}
+ .tt thead th,.tt td.filled{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ section[data-page=timetable]{page:tt}
+ section[data-page=cv]{page:cvp}
 }
-
+@page tt{size:A4 landscape;margin:12mm}
+@page cvp{size:A4 portrait;margin:14mm}
 </style>
 </head>
 <body>
 <!-- دليل التعديل: النصوص المظللة بالأصفر هي بيانات تستبدلها ببياناتك. -->
-<nav id="topnav" aria-label="التنقل الرئيسي"><div class="wrap"><a href="#home">الرئيسية</a><a href="#about">عن المعلم / السيرة الذاتية</a><a href="#framework">الإطار المهني</a><a href="#performance">الأداء الوظيفي / جدول الحصص</a><a href="#production">الإنتاج التعليمي</a><a href="#growth">التطوير والتميّز</a><a href="#register">سجل الاطّلاع</a></div></nav>
-<div class="admbar" id="admbar"><div class="wrap"><b>وضع الإدارة (لا يظهر للمشاهدين)</b><button id="aEdit">تعديل النص: تشغيل</button><button id="aSave">حفظ التغييرات</button><button id="aPh">إزالة التظليل الأصفر</button><label>خط الاسم <select id="heroFont" style="font:inherit"><option value='"Noto Naskh Arabic",Tahoma,serif'>نسخ عربي</option><option value='Tahoma,Arial,sans-serif'>Tahoma</option><option value='"Segoe UI",Tahoma,sans-serif'>Segoe UI</option><option value='Arial,sans-serif'>Arial</option><option value='"Traditional Arabic",serif'>Traditional Arabic</option></select></label><label>سمك الخط <select id="heroWeight" style="font:inherit"><option value="400">عادي</option><option value="500">متوسط</option><option value="600">شبه عريض</option><option value="700" selected>عريض</option><option value="800">عريض جداً</option></select></label><button id="aOut">تسجيل الخروج</button><span id="aMsg"></span></div></div>
+<nav id="topnav" aria-label="التنقل الرئيسي"><div class="wrap"><a href="#home">الرئيسية</a><a href="#about">عن المعلم</a><a href="#framework">الإطار المهني</a><a href="#performance">الأداء الوظيفي</a><a href="#production">الإنتاج التعليمي</a><a href="#growth">التطوير والتميّز</a><a href="#register">سجل الاطّلاع</a></div></nav>
+<div class="admbar" id="admbar"><div class="wrap"><b>وضع الإدارة (لا يظهر للمشاهدين)</b><button id="aEdit">تعديل النص: تشغيل</button><button id="aSave">حفظ التغييرات</button><button id="aPh">إزالة التظليل الأصفر</button><button id="aOut">تسجيل الخروج</button><span id="aMsg"></span></div><div class="wrap fontbar" id="fontbar"><b>تنسيق الخط</b><span id="fTarget">اضغط داخل أي نص لتحديده</span><label>النوع <select id="fFam"><option value="">الخط الافتراضي</option><option value="Tajawal" style="font-family:'Tajawal'">تجوّل · Tajawal</option><option value="Cairo" style="font-family:'Cairo'">القاهرة · Cairo</option><option value="Almarai" style="font-family:'Almarai'">المراعي · Almarai</option><option value="Amiri" style="font-family:'Amiri'">أميري · Amiri</option><option value="Noto Kufi Arabic" style="font-family:'Noto Kufi Arabic'">نوتو كوفي · Noto Kufi</option><option value="Reem Kufi" style="font-family:'Reem Kufi'">ريم كوفي · Reem Kufi</option><option value="El Messiri" style="font-family:'El Messiri'">المسيري · El Messiri</option><option value="Changa" style="font-family:'Changa'">تشانغا · Changa</option><option value="Lalezar" style="font-family:'Lalezar'">لالزار · Lalezar</option><option value="Aref Ruqaa" style="font-family:'Aref Ruqaa'">عارف رقعة · Aref Ruqaa</option></select></label><label>السماكة <select id="fW"><option value="">الافتراضي</option><option value="300">خفيف (300)</option><option value="400">عادي (400)</option><option value="500">متوسط (500)</option><option value="600">شبه عريض (600)</option><option value="700">عريض (700)</option><option value="800">عريض جدًا (800)</option><option value="900">أسود (900)</option></select></label><label>الحجم <input id="fSz" type="number" min="10" max="140" step="1" placeholder="تلقائي"></label><button type="button" id="fReset">إعادة الضبط</button></div></div>
 <header class="hero" id="home"><svg class="scene" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
 <defs><pattern id="g" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#4cc3ea" stroke-opacity=".09"/></pattern>
 <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient></defs>
@@ -177,33 +224,8 @@ a.back{display:inline-block;text-decoration:none;background:var(--accent);color:
     <div><b class="ph">0</b><span>درس نموذجي</span></div>
     <div><b class="ph">0</b><span>تجربة عملية منفذة</span></div>
     <div><b class="ph">0</b><span>طالب مكرَّم</span></div>
-  </div><p class="lead">السيرة الذاتية المهنية — اكتب بياناتك مباشرة في الحقول التالية، وسيتم حفظها تلقائياً على هذا الجهاز.</p>
-<div class="cv-editor" id="cvEditor">
-<h3 class="sub">البيانات الشخصية والمهنية</h3>
-<div class="cv-grid">
-<label>الاسم الكامل<input data-cv="fullname" placeholder="اكتب الاسم الكامل"></label>
-<label>المسمى الوظيفي<input data-cv="job" placeholder="معلم الفيزياء"></label>
-<label>التخصص<input data-cv="specialty" placeholder="فيزياء / علوم"></label>
-<label>المؤهل العلمي<input data-cv="degree" placeholder="بكالوريوس ..."></label>
-<label>الجامعة / جهة التخرج<input data-cv="university" placeholder="اسم الجامعة"></label>
-<label>سنة التخرج<input data-cv="graduation" placeholder="1440هـ / 2019م"></label>
-<label>سنوات الخبرة<input data-cv="experience" placeholder="عدد السنوات"></label>
-<label>المدرسة الحالية<input data-cv="school" placeholder="اسم المدرسة"></label>
-<label>إدارة التعليم<input data-cv="education" placeholder="الإدارة / المنطقة"></label>
-<label>البريد الإلكتروني<input data-cv="email" placeholder="البريد الرسمي"></label>
-<label>رقم التواصل<input data-cv="phone" placeholder="رقم الجوال"></label>
-<label>المدينة<input data-cv="city" placeholder="المدينة"></label>
-</div>
-<label class="cv-wide">النبذة المهنية<textarea data-cv="summary" rows="4" placeholder="اكتب نبذة مهنية موجزة عن خبرتك ورسالتك التعليمية..."></textarea></label>
-<label class="cv-wide">الخبرات العملية<textarea data-cv="work" rows="5" placeholder="اسم المدرسة — المسمى — الفترة — أبرز المهام والإنجازات (كل خبرة في سطر)"></textarea></label>
-<label class="cv-wide">المهارات المهنية والتقنية<textarea data-cv="skills" rows="4" placeholder="التخطيط للتدريس، إدارة الصف، التقويم، المختبرات، التقنية التعليمية..."></textarea></label>
-<label class="cv-wide">الدورات والشهادات<textarea data-cv="courses" rows="4" placeholder="اسم الدورة — الجهة — التاريخ — عدد الساعات"></textarea></label>
-<label class="cv-wide">الإنجازات والمبادرات<textarea data-cv="achievements" rows="4" placeholder="المبادرات، الجوائز، المشاركات، نتائج الطلاب..."></textarea></label>
-<label class="cv-wide">الرؤية والرسالة والقيم<textarea data-cv="vision" rows="3" placeholder="رؤيتك ورسالتك والقيم التي تستند إليها في التعليم"></textarea></label>
-<div class="tools"><button type="button" id="cvPrint">طباعة السيرة الذاتية / حفظ PDF</button><button type="button" class="ghost" id="cvClear">مسح بيانات السيرة الذاتية</button></div>
-</div>
-<ul class="items">
-        <li><div>السيرة الذاتية<small>المؤهلات والخبرات والمهارات</small></div><a class="btn" href="#">عرض</a></li>
+  </div><p class="lead">الهوية المهنية والمؤهلات.</p><ul class="items">
+        <li><div>السيرة الذاتية<small>المؤهلات والخبرات والمهارات</small></div><a class="btn" href="#cv">عرض</a></li>
         <li><div>الشهادات<small>المؤهل العلمي وشهادات الشكر</small></div><a class="btn" href="#">عرض</a></li>
         <li><div>الرؤية والرسالة والقيم<small>ما أسعى إليه في ممارستي التعليمية</small></div><a class="btn" href="#">عرض</a></li>
       </ul></div><p class="foot-back"><a class="back" href="#home">→ العودة إلى الصفحة الرئيسية</a></p></div></section>
@@ -212,13 +234,8 @@ a.back{display:inline-block;text-decoration:none;background:var(--accent);color:
         <li><div>ميثاق أخلاقيات مهنة التعليم</div><a class="btn" href="#">عرض</a></li>
         <li><div>سجل الاطّلاع<small>توقيع المشرفين إلكترونياً</small></div><a class="btn" href="#register">فتح السجل</a></li>
       </ul></div><p class="foot-back"><a class="back" href="#home">→ العودة إلى الصفحة الرئيسية</a></p></div></section>
-<section class="page" data-page="performance" hidden><div class="inner"><div class="pagehead"><a class="back" href="#home">→ الرئيسية</a><h2>الأداء الوظيفي</h2></div><div class="pc"><p class="lead">جدول الحصص الأسبوعي — اكتب اسم المادة أو الصف أو الفصل في الخانات، ويتم الحفظ تلقائياً.</p>
-<div class="schedule-editor">
-<div class="tools"><button type="button" id="schedulePrint">طباعة جدول الحصص / حفظ PDF</button><button type="button" class="ghost" id="scheduleClear">مسح الجدول</button></div>
-<div class="reg-wrap"><table class="reg timetable" id="timetable"><thead><tr><th>الحصة</th><th>الأحد</th><th>الاثنين</th><th>الثلاثاء</th><th>الأربعاء</th><th>الخميس</th></tr></thead><tbody></tbody></table></div>
-<p class="note">يمكن كتابة المادة والصف أو الفصل داخل كل خانة، مثل: فيزياء — 2/1.</p>
-</div><ul class="items">
-        <li><div>جدول الحصص</div><a class="btn" href="#">عرض</a></li>
+<section class="page" data-page="performance" hidden><div class="inner"><div class="pagehead"><a class="back" href="#home">→ الرئيسية</a><h2>الأداء الوظيفي</h2></div><div class="pc"><p class="lead">التخطيط والمتابعة اليومية.</p><ul class="items">
+        <li><div>جدول الحصص</div><a class="btn" href="#timetable">عرض</a></li>
         <li><div>توزيع المنهج<small>الخطة الزمنية لوحدات الفيزياء</small></div><a class="btn" href="#">عرض</a></li>
         <li><div>سجل الحضور والمتابعة<small>الصفان الثاني والثالث الثانوي · نماذج دون أسماء الطلاب</small></div><a class="btn" href="#">عرض</a></li>
       </ul></div><p class="foot-back"><a class="back" href="#home">→ العودة إلى الصفحة الرئيسية</a></p></div></section>
@@ -244,7 +261,7 @@ a.back{display:inline-block;text-decoration:none;background:var(--accent);color:
     <p class="note" id="mode" style="margin-top:0"></p>
     <dialog id="dlg"><p id="who"></p><canvas id="cv"></canvas><div class="tools"><button id="ok">حفظ التوقيع</button><button class="ghost" id="clr">مسح</button><button class="ghost" id="cancel">إغلاق</button></div></dialog>
   <p class="foot-back"><a class="back" href="#home">→ العودة إلى الصفحة الرئيسية</a></p></div></section>
-</main>
+<section class="page" data-page="cv" hidden aria-labelledby="tcv"><div class="inner"><div class="pagehead"><a class="back" href="#about">→ عن المعلم</a><h2 id="tcv">السيرة الذاتية</h2><button type="button" class="doprint tbtn">🖨 طباعة / حفظ PDF</button></div><div class="pc cv"><div class="cv-top"><h3 class="cv-name e"><span class="ph">الاسم الثلاثي</span></h3><p class="cv-title e">معلم الفيزياء – المرحلة الثانوية</p><div class="kv"><div><b>الجوال</b><span class="e ph" dir="auto">05XXXXXXXX</span></div><div><b>البريد الإلكتروني</b><span class="e ph" dir="auto">name@example.com</span></div><div><b>المدينة</b><span class="e ph">المدينة</span></div><div><b>جهة العمل</b><span class="e ph">اسم المدرسة · إدارة تعليم المنطقة</span></div></div></div><div class="cv-sec"><h3 class="cv-h">نبذة مهنية</h3><p class="cv-p e">معلم فيزياء حاصل على بكالوريوس الفيزياء، بخبرة تدريسية تزيد على <span class="ph">0</span> سنوات في المرحلة الثانوية. أتميّز بتبسيط المفاهيم الفيزيائية وربطها بالحياة اليومية، وتوظيف التجارب العملية والمحاكاة التفاعلية والتقنية الحديثة في رفع تحصيل الطلاب وتنمية مهارات التفكير العلمي وحل المشكلات. أسعى إلى الإسهام في تحقيق مستهدفات رؤية المملكة 2030 في جودة التعليم ورعاية الموهوبين علميًا.</p></div><div class="cv-sec"><h3 class="cv-h">البيانات الشخصية</h3><div class="kv"><div><b>الجنسية</b><span class="e ph">سعودي</span></div><div><b>تاريخ الميلاد</b><span class="e ph">00/00/14XX هـ</span></div><div><b>الحالة الاجتماعية</b><span class="e ph">متزوج</span></div><div><b>الرتبة الوظيفية</b><span class="e ph">معلم ممارس / متقدم / خبير</span></div><div><b>الرخصة المهنية</b><span class="e ph">رقم الرخصة · تاريخ الانتهاء</span></div></div></div><div class="cv-sec"><h3 class="cv-h">المؤهلات العلمية</h3><div class="cv-entries"><div class="cv-entry"><div class="cv-row"><b class="e">بكالوريوس الفيزياء</b><span class="e cv-date"><span class="ph">14XX هـ</span></span></div><p class="cv-sub e"><span class="ph">اسم الجامعة · الكلية</span></p><ul class="cvl"><li><span class="e">التقدير العام: <span class="ph">ممتاز / جيد جدًا</span> · المعدل التراكمي: <span class="ph">0.00 من 5.00</span></span></li></ul></div><div class="cv-entry"><div class="cv-row"><b class="e">الدبلوم التربوي (اختياري)</b><span class="e cv-date"><span class="ph">14XX هـ</span></span></div><p class="cv-sub e"><span class="ph">اسم الجامعة</span></p><ul class="cvl"><li><span class="e">مؤهل تربوي في طرق التدريس والقياس والتقويم.</span></li></ul></div></div></div><div class="cv-sec"><h3 class="cv-h">الخبرات العملية</h3><div class="cv-entries"><div class="cv-entry"><div class="cv-row"><b class="e">معلم فيزياء</b><span class="e cv-date"><span class="ph">14XX هـ – حتى الآن</span></span></div><p class="cv-sub e"><span class="ph">اسم المدرسة · إدارة تعليم المنطقة</span></p><ul class="cvl"><li><span class="e">تدريس مقرر الفيزياء للصفوف <span class="ph">الثاني والثالث الثانوي</span> وفق المنهج المعتمد ومعايير الأداء.</span></li><li><span class="e">إعداد خطط الدروس وتنفيذ دروس نموذجية تعتمد التعلم النشط والتجربة العملية ومحاكاة PhET.</span></li><li><span class="e">بناء أدوات التقويم (اختبارات، أوراق عمل، مهام أدائية) وفق مستويات التفكير، وتحليل النتائج ووضع خطط علاجية وإثرائية.</span></li><li><span class="e">تنفيذ <span class="ph">0</span> تجربة عملية خلال العام الدراسي وتوثيقها بالصور والفيديو.</span></li><li><span class="e">التواصل مع أولياء الأمور والمرشد الطلابي لمتابعة الطلاب المتأخرين دراسيًا.</span></li></ul></div><div class="cv-entry"><div class="cv-row"><b class="e">معلم (الوظيفة السابقة)</b><span class="e cv-date"><span class="ph">14XX هـ – 14XX هـ</span></span></div><p class="cv-sub e"><span class="ph">اسم الجهة</span></p><ul class="cvl"><li><span class="e">المهام الرئيسة والإنجازات في هذه الوظيفة.</span></li></ul></div></div></div><div class="cv-sec"><h3 class="cv-h">المهارات التدريسية</h3><div class="chips"><span class="chip"><span class="e">التخطيط للدروس</span></span><span class="chip"><span class="e">إدارة الصف</span></span><span class="chip"><span class="e">التعلم النشط</span></span><span class="chip"><span class="e">التعلم القائم على المشاريع</span></span><span class="chip"><span class="e">التقويم البنائي</span></span><span class="chip"><span class="e">التعليم المتمايز</span></span><span class="chip"><span class="e">تنفيذ التجارب المخبرية</span></span><span class="chip"><span class="e">حل المسائل الفيزيائية</span></span><span class="chip"><span class="e">بناء الاختبارات</span></span><span class="chip"><span class="e">تحفيز الطلاب</span></span></div></div><div class="cv-sec"><h3 class="cv-h">المهارات التقنية</h3><div class="chips"><span class="chip"><span class="e">محاكاة PhET</span></span><span class="chip"><span class="e">منصة مدرستي</span></span><span class="chip"><span class="e">Microsoft Office</span></span><span class="chip"><span class="e">Excel لتحليل النتائج</span></span><span class="chip"><span class="e">Kahoot / Quizizz</span></span><span class="chip"><span class="e">Canva</span></span><span class="chip"><span class="e">الاختبارات الإلكترونية</span></span></div></div><div class="cv-sec"><h3 class="cv-h">الدورات التدريبية وورش العمل</h3><ul class="cvl"><li><span class="e"><span class="ph">اسم الدورة</span> · <span class="ph">الجهة المنفذة</span> · <span class="ph">14XX هـ</span> · <span class="ph">00</span> ساعة</span></li><li><span class="e"><span class="ph">اسم الدورة</span> · <span class="ph">الجهة المنفذة</span> · <span class="ph">14XX هـ</span> · <span class="ph">00</span> ساعة</span></li><li><span class="e"><span class="ph">اسم الدورة</span> · <span class="ph">الجهة المنفذة</span> · <span class="ph">14XX هـ</span> · <span class="ph">00</span> ساعة</span></li></ul></div><div class="cv-sec"><h3 class="cv-h">الإنجازات والتكريم</h3><ul class="cvl"><li><span class="e">شهادة شكر وتقدير من <span class="ph">الجهة</span> لتميّز الأداء الوظيفي عام <span class="ph">14XX هـ</span>.</span></li><li><span class="e">رفع متوسط تحصيل الطلاب في مقرر الفيزياء بنسبة <span class="ph">00%</span> خلال العام <span class="ph">14XX هـ</span>.</span></li><li><span class="e">تكريم <span class="ph">0</span> من الطلاب المتميزين في الفيزياء والمسابقات العلمية.</span></li></ul></div><div class="cv-sec"><h3 class="cv-h">المبادرات والأنشطة</h3><ul class="cvl"><li><span class="e">الإشراف على <span class="ph">نادي العلوم</span> وتدريب الطلاب على المسابقات والمعارض العلمية.</span></li><li><span class="e">إطلاق مبادرة <span class="ph">اسم المبادرة</span> لتعزيز التعلم بالتجربة داخل المدرسة.</span></li></ul></div><div class="cv-sec"><h3 class="cv-h">اللغات</h3><div class="chips"><span class="chip"><span class="e">العربية (اللغة الأم)</span></span><span class="chip"><span class="e">الإنجليزية: <span class="ph">جيد جدًا</span></span></span></div></div><div class="cv-sec"><h3 class="cv-h">المراجع</h3><p class="cv-p e">تُقدَّم عند الطلب.</p></div></div></div></section><section class="page" data-page="timetable" hidden aria-labelledby="ttt"><div class="inner"><div class="pagehead"><a class="back" href="#performance">→ الأداء الوظيفي</a><h2 id="ttt">جدول الحصص</h2><button type="button" class="doprint tbtn">🖨 طباعة / حفظ PDF</button></div><div class="pc"><div class="tt-info"><p class="e"><b>المعلم:</b> <span class="ph">الاسم الثلاثي</span></p><p class="e"><b>المدرسة:</b> <span class="ph">اسم المدرسة</span></p><p class="e"><b>الفصل الدراسي:</b> <span class="ph">الأول</span></p><p class="e"><b>العام:</b> <span class="ph">1447هـ</span></p></div><div class="tt-wrap"><table class="tt"><thead><tr><th>الحصة / اليوم</th><th>الأحد</th><th>الاثنين</th><th>الثلاثاء</th><th>الأربعاء</th><th>الخميس</th></tr></thead><tbody><tr><th>الحصة الأولى<small class="e ph">الوقت</small></th><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td></tr><tr><th>الحصة الثانية<small class="e ph">الوقت</small></th><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td></tr><tr><th>الحصة الثالثة<small class="e ph">الوقت</small></th><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td></tr><tr><th>الحصة الرابعة<small class="e ph">الوقت</small></th><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td></tr><tr><th>الحصة الخامسة<small class="e ph">الوقت</small></th><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td></tr><tr><th>الحصة السادسة<small class="e ph">الوقت</small></th><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td></tr><tr><th>الحصة السابعة<small class="e ph">الوقت</small></th><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td></tr></tbody></table></div><div class="tt-count">عدد الحصص الأسبوعية: <b id="ttCount">0</b> حصة</div><p class="note admonly e">اضغط على أي خانة واكتب المادة والصف (مثال: فيزياء – ثالث ثانوي)، واترك الخانة فارغة للحصة الخالية. يُحسب عدد الحصص تلقائيًا.</p></div></div></section></main>
 <footer id="contact"><div class="wrap">
   <div><p><b>للتواصل</b></p><p><span class="ph">البريد الرسمي</span></p></div>
   <div><p><span class="ph">اسم المدرسة</span></p><p>© <span class="ph">الاسم</span> · <span class="ph">1447هـ</span></p><p><a href="#" id="loginLink" style="font-size:13px;opacity:.65">دخول الإدارة</a></p></div>
@@ -313,8 +330,8 @@ if(C&&C.apiKey&&C.apiKey.indexOf('PASTE')<0){Promise.all([import(B+'firebase-app
 </script>
 <script>
 (function(){
-var Z=['#hero-text','[data-page=about] .pc','[data-page=framework] .pc','[data-page=performance] .pc','[data-page=production] .pc','[data-page=growth] .pc','footer .wrap'];
-var TXT='h1,h2,h3,h4,p,small,.stats b,.stats span,.items li>div';
+var Z=['#hero-text','[data-page=about] .pc','[data-page=framework] .pc','[data-page=performance] .pc','[data-page=production] .pc','[data-page=growth] .pc','footer .wrap','[data-page=cv] .pc','[data-page=timetable] .pc'];
+var TXT='h1,h2,h3,h4,p,small,.stats b,.stats span,.items li>div,.e';
 var editing=true,db=null,msg=document.getElementById('aMsg');
 function zs(){return Z.map(function(s){return document.querySelector(s)})}
 function clean(root){root.querySelectorAll('script,iframe,object,embed,style,link').forEach(function(n){n.remove()});root.querySelectorAll('*').forEach(function(n){Array.from(n.attributes).forEach(function(a){var v=a.value.trim().toLowerCase();if(a.name.indexOf('on')===0||(/^(href|src|xlink:href)$/.test(a.name)&&v.indexOf('javascript:')===0))n.removeAttribute(a.name)})})}
@@ -350,10 +367,36 @@ function decorate(){
  var fw=document.getElementById('framework');
  if(fw)fw.appendChild(mk('＋ إضافة قسم',function(){var bs=fw.querySelectorAll('.block');var last=bs[bs.length-1];if(!last)return;var n=cc(last);n.querySelector('h3').textContent='قسم جديد';n.querySelector('p').textContent='وصف القسم';var lis=n.querySelectorAll('.items li');for(var i=1;i<lis.length;i++)lis[i].remove();lis[0].querySelector('div').textContent='عنوان جديد';last.parentNode.insertBefore(n,last.nextSibling);refresh()},'addbtn'));
  document.querySelectorAll('.stats>div,.exp>div').forEach(function(d){d.appendChild(mk('×',function(){if(confirm('حذف؟')){d.remove();refresh()}},'xbtn'))});
- [['.stats','عنوان'],['.exp','عنوان التجربة']].forEach(function(p){var box=document.querySelector(p[0]);if(!box)return;var btn=mk('＋ إضافة',function(){var last=box.lastElementChild;while(last&&last.classList.contains('adm'))last=last.previousElementSibling;if(!last)return;var n=cc(last);var h=n.querySelector('b,h4');if(h)h.textContent=p[0]==='.stats'?'0':p[1];var s=n.querySelector('span,p');if(s)s.textContent=p[0]==='.stats'?'عنوان':'وصف مختصر';box.appendChild(n);refresh()},'addbtn');box.parentNode.insertBefore(btn,box.nextSibling)})
+ [['.stats','عنوان'],['.exp','عنوان التجربة']].forEach(function(p){var box=document.querySelector(p[0]);if(!box)return;var btn=mk('＋ إضافة',function(){var last=box.lastElementChild;while(last&&last.classList.contains('adm'))last=last.previousElementSibling;if(!last)return;var n=cc(last);var h=n.querySelector('b,h4');if(h)h.textContent=p[0]==='.stats'?'0':p[1];var s=n.querySelector('span,p');if(s)s.textContent=p[0]==='.stats'?'عنوان':'وصف مختصر';box.appendChild(n);refresh()},'addbtn');box.parentNode.insertBefore(btn,box.nextSibling)});
+ [['.cvl','li','بند جديد','＋ إضافة بند'],['.chips','.chip','مهارة جديدة','＋ إضافة'],['.cv-entries','.cv-entry','اكتب هنا','＋ إضافة عنصر']].forEach(function(p){
+  document.querySelectorAll(p[0]).forEach(function(box){
+   function kids(){return Array.prototype.filter.call(box.children,function(c){return c.matches(p[1])&&!c.classList.contains('adm')})}
+   kids().forEach(function(it){it.appendChild(mk(p[1]==='.cv-entry'?'× حذف':'×',function(){if(kids().length<2){alert('اترك عنصراً واحداً على الأقل، وعدّل نصه.');return}if(confirm('حذف؟')){it.remove();refresh()}},p[1]==='.cv-entry'?'xbtn wide':'xbtn'))});
+   box.parentNode.insertBefore(mk(p[3],function(){var k=kids(),last=k[k.length-1];if(!last)return;var n=cc(last);n.querySelectorAll('.e').forEach(function(x){x.textContent=p[2]});var ex=n.querySelectorAll('.cvl li');for(var i=1;i<ex.length;i++)ex[i].remove();box.appendChild(n);refresh()},'addbtn'),box.nextSibling)})});
+}
+function wire(){document.querySelectorAll('.items li').forEach(function(li){var d=li.querySelector('div'),a=li.querySelector('a.btn');if(!d||!a)return;var h=a.getAttribute('href');if(h&&h!=='#')return;var t=d.textContent.trim();if(t.indexOf('السيرة الذاتية')===0)a.setAttribute('href','#cv');else if(t.indexOf('جدول الحصص')===0)a.setAttribute('href','#timetable')})}
+function ttCount(){var n=0;document.querySelectorAll('.tt td').forEach(function(td){var f=td.textContent.trim().length>0;td.classList.toggle('filled',f);if(f)n++});var b=document.getElementById('ttCount');if(b)b.textContent=n}
+document.addEventListener('input',function(e){if(e.target.closest&&e.target.closest('.tt'))ttCount()});
+document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('.doprint'))window.print()});
+wire();ttCount();
+function fontInit(){
+ var fam=document.getElementById('fFam'),fw=document.getElementById('fW'),fsz=document.getElementById('fSz'),ftg=document.getElementById('fTarget'),FT=null;
+ function nm(el){var t=el.tagName;if(el.matches('#hero-text h1'))return 'الاسم (العنوان الرئيسي)';if(el.matches('#hero-text .role'))return 'المسمى الوظيفي';if(el.matches('#hero-text .meta'))return 'المدرسة والإدارة';if(el.matches('#hero-text .quote'))return 'العبارة';if(el.matches('#hero-text .intro'))return 'النبذة';if(/^H[1-4]$/.test(t))return 'عنوان';if(t==='TD')return 'خلية الجدول';return 'نص'}
+ function clr(el){if(!el.getAttribute('style'))el.removeAttribute('style')}
+ function sync(el){FT=el;if(!el){ftg.textContent='اضغط داخل أي نص لتحديده';return}ftg.textContent='المحدد: '+nm(el);
+  var inl=el.style.fontFamily.replace(/["']/g,''),m='';Array.prototype.forEach.call(fam.options,function(o){if(o.value&&inl.indexOf(o.value)===0)m=o.value});fam.value=m;
+  fw.value=el.style.fontWeight||'';fsz.value=el.style.fontSize?parseFloat(el.style.fontSize):'';fsz.placeholder=String(Math.round(parseFloat(getComputedStyle(el).fontSize))||'')}
+ function need(){if(!FT){msg.textContent='اضغط داخل النص الذي تريد تغيير خطّه أولاً.';return false}msg.textContent='';return true}
+ document.addEventListener('focusin',function(e){var t=e.target.closest&&e.target.closest('[contenteditable=true]');if(t&&!t.closest('dialog'))sync(t)});
+ fam.onchange=function(){if(!need())return;if(fam.value)FT.style.fontFamily='"'+fam.value+'",sans-serif';else FT.style.removeProperty('font-family');clr(FT)};
+ fw.onchange=function(){if(!need())return;if(fw.value)FT.style.fontWeight=fw.value;else FT.style.removeProperty('font-weight');clr(FT)};
+ fsz.onchange=function(){if(!need())return;var v=parseFloat(fsz.value);if(v>=10&&v<=140)FT.style.fontSize=v+'px';else FT.style.removeProperty('font-size');clr(FT)};
+ document.getElementById('fReset').onclick=function(){if(!need())return;['font-family','font-weight','font-size'].forEach(function(p){FT.style.removeProperty(p)});clr(FT);sync(FT)};
+ document.addEventListener('paste',function(e){var t=e.target.closest&&e.target.closest('[contenteditable=true]');if(!t)return;e.preventDefault();var x=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,x)});
+ sync(document.querySelector('#hero-text h1'));
 }
 function admin(){
- document.body.classList.add('isadmin');decorate();setEd(true);if(window.__regRedraw)window.__regRedraw();
+ document.body.classList.add('isadmin');decorate();setEd(true);fontInit();if(window.__regRedraw)window.__regRedraw();
  var e=document.getElementById('aEdit');
  e.onclick=function(){setEd(!editing);e.textContent='تعديل النص: '+(editing?'تشغيل':'إيقاف')};
  document.getElementById('aOut').onclick=function(){window.__logout().then(function(){location.reload()})};
@@ -361,7 +404,7 @@ function admin(){
  document.getElementById('aSave').onclick=function(){if(!window.__saveZones){msg.textContent='الحفظ غير متاح: لم تُضبط قاعدة البيانات.';return}
   window.__saveZones(snapshot()).then(function(){msg.textContent='تم الحفظ'}).catch(function(){msg.textContent='تعذّر الحفظ'})}
 }
-window.__init=function(s){if(Array.isArray(s.zones))apply(s.zones)};
+window.__init=function(s){if(Array.isArray(s.zones))apply(s.zones);wire();ttCount()};
 window.__setAdmin=function(ok){if(ok&&!document.body.classList.contains('isadmin'))admin()};
 var ld=document.getElementById('ldlg'),lm=document.getElementById('lmsg');
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('#loginLink');if(!a)return;e.preventDefault();ld.showModal()});
@@ -369,49 +412,12 @@ document.getElementById('lcancel').onclick=function(){ld.close()};
 document.getElementById('lok').onclick=function(){if(!window.__login){lm.textContent='لم تُضبط قاعدة البيانات بعد.';return}lm.textContent='...';window.__login(document.getElementById('lu').value.trim().toLowerCase(),document.getElementById('lp').value).then(function(){ld.close();document.getElementById('lp').value='';lm.textContent=''}).catch(function(e){var c=(e&&e.code)||'';lm.textContent=(c==='auth/operation-not-allowed'?'لم يُفعَّل Email/Password في Firebase.':c==='auth/too-many-requests'?'محاولات كثيرة، انتظر قليلاً ثم أعد المحاولة.':c==='auth/network-request-failed'?'مشكلة في الاتصال بالإنترنت.':'البريد أو كلمة السر غير صحيحة، أو لم يُضف المستخدم.')+' ('+c+')'})};
 })();
 </script>
-
 <script>
-(function(){
-  var cvKey='teacher_cv_v1', scheduleKey='teacher_schedule_v1';
-  function load(key){try{return JSON.parse(localStorage.getItem(key)||'{}')}catch(e){return {}}}
-  function save(key,obj){try{localStorage.setItem(key,JSON.stringify(obj))}catch(e){}}
-  var cv=load(cvKey);
-  document.querySelectorAll('[data-cv]').forEach(function(el){
-    var k=el.getAttribute('data-cv'); if(cv[k])el.value=cv[k];
-    el.addEventListener('input',function(){cv[k]=el.value;save(cvKey,cv)});
-  });
-  var days=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس'], tbody=document.querySelector('#timetable tbody'), sched=load(scheduleKey);
-  for(var period=1;period<=7;period++){
-    var tr=document.createElement('tr'), th=document.createElement('th');th.textContent='الحصة '+period;tr.appendChild(th);
-    days.forEach(function(day){
-      var td=document.createElement('td'),input=document.createElement('input'),key=period+'_'+day;
-      input.type='text';input.placeholder='المادة / الصف';input.setAttribute('aria-label','الحصة '+period+' يوم '+day);input.value=sched[key]||'';
-      input.addEventListener('input',function(){sched[key]=input.value;save(scheduleKey,sched)});
-      td.appendChild(input);tr.appendChild(td);
-    });tbody.appendChild(tr);
-  }
-  document.getElementById('cvPrint').addEventListener('click',function(){window.print()});
-  document.getElementById('schedulePrint').addEventListener('click',function(){window.print()});
-  document.getElementById('cvClear').addEventListener('click',function(){if(confirm('مسح جميع بيانات السيرة الذاتية؟')){cv={};save(cvKey,cv);document.querySelectorAll('[data-cv]').forEach(function(el){el.value=''})}});
-  document.getElementById('scheduleClear').addEventListener('click',function(){if(confirm('مسح جدول الحصص بالكامل؟')){sched={};save(scheduleKey,sched);tbody.querySelectorAll('input').forEach(function(el){el.value=''})}});
-  // Home page teacher name font controls; saved in the editable hero section.
-  var name=document.querySelector('.hero h1');
-  var font=document.getElementById('heroFont'),weight=document.getElementById('heroWeight');
-  function restoreType(){if(!name)return;var span=name.querySelector('.ph');if(span){if(name.dataset.nameFont)span.style.fontFamily=name.dataset.nameFont;if(name.dataset.nameWeight)span.style.fontWeight=name.dataset.nameWeight}}
-  if(name){
-    restoreType();
-    if(font)font.addEventListener('change',function(){var span=name.querySelector('.ph');if(span){span.style.fontFamily=font.value;name.dataset.nameFont=font.value}});
-    if(weight)weight.addEventListener('change',function(){var span=name.querySelector('.ph');if(span){span.style.fontWeight=weight.value;name.dataset.nameWeight=weight.value}});
-  }
-})();
-</script>
-
-<script>
-(function(){var N=['home','about','framework','performance','production','growth','register'];
+(function(){var N=['home','about','framework','performance','production','growth','register','cv','timetable'],PAR={cv:'about',timetable:'performance'};
 function show(){var h=(location.hash||'#home').slice(1);if(N.indexOf(h)<0)h='home';
 document.querySelectorAll('[data-page]').forEach(function(p){p.hidden=p.getAttribute('data-page')!==h});
 document.getElementById('home').hidden=h!=='home';
-document.querySelectorAll('#topnav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+h)});
+document.querySelectorAll('#topnav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+(PAR[h]||h))});
 window.scrollTo(0,0)}
 window.addEventListener('hashchange',show);show();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#"]');if(a)e.preventDefault()});
